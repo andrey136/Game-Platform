@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Cherry from './cherry';
 import Fruits from './Fruits';
 import './index.css';
+import Description from './banana description';
 
 class BananasAndShit extends Component {
   constructor(props){
@@ -17,6 +18,7 @@ class BananasAndShit extends Component {
       afterWards: true,
       money : 50,
       areYouPlaying : false,
+      description : true
     }
   }
 
@@ -144,18 +146,34 @@ class BananasAndShit extends Component {
     return arr;
   }
 
+  playNow(){
+    this.setState({
+      description : false,
+    })
+  }
+  stopPlaying(){
+    this.setState({
+      description : true,
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <h1 className="display-2">Level № {this.state.afterWards ? this.state.level : this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 || this.state.howManyTimesYouWon === 9 ? this.state.level - 1 : this.state.level}</h1>
-        <h2>Account {this.state.money}$</h2>
-        <button className="btn btn-success" onClick={() => this.plus()}>Add money</button>
-        <br/>
-        Counter: {this.state.counter}
-        <br/>
-        {this.state.notYet ? <Cherry game4={(index) => this.game(index)}/> : <Fruits fruits={this.state.fruits}/>}
-        <br/>
-        {this.state.didYouWin ? <div><h1>You Won!!!</h1><button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button><button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button></div> : !this.state.notYet ? <div><h1 color='blue'>You Lost :(</h1><button className="btn btn-primary" onClick={() => this.newGame()}>New game</button></div> : ''}
+        {this.state.description ? <Description menu={() => this.props.menu()} playNow={() => this.playNow()}/> :
+          <div>
+            <button className="stopPlaying"  onClick={() => this.stopPlaying()}>Return back</button>
+            <h1 className="display-2">Level № {this.state.afterWards ? this.state.level : this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 || this.state.howManyTimesYouWon === 9 ? this.state.level - 1 : this.state.level}</h1>
+            <h2>Account {this.state.money}$</h2>
+            <button className="btn btn-success" onClick={() => this.plus()}>Add money</button>
+            <br/>
+            Counter: {this.state.counter}
+            <br/>
+            {this.state.notYet ? <Cherry game4={(index) => this.game(index)}/> : <Fruits fruits={this.state.fruits}/>}
+            <br/>
+            {this.state.didYouWin ? <div><h1>You Won!!!</h1><button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button><button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button></div> : !this.state.notYet ? <div><h1 color='blue'>You Lost :(</h1><button className="btn btn-primary" onClick={() => this.newGame()}>New game</button></div> : ''}
+          </div>
+        }
       </div>
     );
   }

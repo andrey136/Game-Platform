@@ -20,11 +20,18 @@ class App extends Component {
     })
   }
 
+  menu(){
+    this.setState({
+      isGameChosen : false,
+      bananasAndShit : false,
+    })
+  }
+
   render() {
     return (
       <div className="App">
         {!this.state['isGameChosen'] && <ChooseAGame chosenGame={(name) => this.chosenGame(name)}/>}
-        {this.state['bananasAndShit'] && <BananasAndShit chosenGame={(name) => this.chosenGame(name)}/>}
+        {this.state['bananasAndShit'] && <BananasAndShit menu={() => this.menu()} chosenGame={(name) => this.chosenGame(name)}/>}
       </div>
     );
   }
