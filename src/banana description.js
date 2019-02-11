@@ -15,11 +15,11 @@ class description extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App padding">
         <h1>Description</h1>
         <br/>
         <h3>Hello my dear friend. Today I'm going to show you my first computer game and explain the rules of it.</h3>
-        <p>
+        <pre>
           1. There are 4 levels.
           <br/>
           2. You choose one of the five cherries.
@@ -33,7 +33,7 @@ class description extends Component {
           6. The greater level you have, the more crap is hidden beside the cherries.
           <br/>
           Good luck!!!
-        </p>
+        </pre>
         <br/>
         <br/>
         <pre><button onClick={() => this.playNow()} className="btn btn-success">Play now</button>  OR  <button onClick={() => this.props.menu()} className="btn btn-primary">Return back</button></pre>

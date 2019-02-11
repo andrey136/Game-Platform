@@ -18,7 +18,8 @@ class BananasAndShit extends Component {
       afterWards: true,
       money : 50,
       areYouPlaying : false,
-      description : true
+      description : true,
+      bet : 10,
     }
   }
 
@@ -63,6 +64,19 @@ class BananasAndShit extends Component {
     });
   }
 
+  counter(){
+    if(this.state.howManyTimesYouWon === 0)return Math.round(this.state.bet * 1.238);
+    if(this.state.howManyTimesYouWon === 1)return Math.round(this.state.bet * 1.547);
+    if(this.state.howManyTimesYouWon === 2)return Math.round(this.state.bet * 1.934);
+    if(this.state.howManyTimesYouWon === 3)return Math.round(this.state.bet * 2.417);
+    if(this.state.howManyTimesYouWon === 4)return Math.round(this.state.bet * 4.028);
+    if(this.state.howManyTimesYouWon === 5)return Math.round(this.state.bet * 6.714);
+    if(this.state.howManyTimesYouWon === 6)return Math.round(this.state.bet * 11.19);
+    if(this.state.howManyTimesYouWon === 7)return Math.round(this.state.bet * 27.974);
+    if(this.state.howManyTimesYouWon === 8)return Math.round(this.state.bet * 69.936);
+    if(this.state.howManyTimesYouWon === 9)return Math.round(this.state.bet * 349.681);
+  }
+
   game(x){
     let howManyTimesYouWon = this.state.howManyTimesYouWon;
     let level = this.state.level;
@@ -70,7 +84,7 @@ class BananasAndShit extends Component {
     let counter = this.state.counter;
     let isItCrap = false;
     let money = this.state.money;
-    if (!this.state.areYouPlaying) money -= 20;
+    if (!this.state.areYouPlaying) money -= this.state.bet;
     let arr1;
     if(level === 1)arr1 = this.game4(x);
     if(level === 2)arr1 = this.game3(x);
@@ -81,8 +95,9 @@ class BananasAndShit extends Component {
       level = 1;
       howManyTimesYouWon = 0;
     } else {
-      counter += level * 10;
+      console.log(this.counter());
       didYouWin = true;
+      counter = this.counter();
       howManyTimesYouWon += 1;
     }
     if(howManyTimesYouWon === 4)level += 1;
@@ -162,14 +177,16 @@ class BananasAndShit extends Component {
       <div className="App">
         {this.state.description ? <Description menu={() => this.props.menu()} playNow={() => this.playNow()}/> :
           <div>
-            <button className="stopPlaying"  onClick={() => this.stopPlaying()}>Return back</button>
+
+            <h2>
+              <button className="stopPlaying returnBack"  onClick={() => this.stopPlaying()}>Return back</button>
+              Account {this.state.money}$
+            </h2>
             <h1 className="display-2">Level № {this.state.afterWards ? this.state.level : this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 || this.state.howManyTimesYouWon === 9 ? this.state.level - 1 : this.state.level}</h1>
-            <h2>Account {this.state.money}$</h2>
-            <button className="btn btn-success" onClick={() => this.plus()}>Add money</button>
             <br/>
-            Counter: {this.state.counter}
+            <h2>Counter: {this.state.counter}</h2>
             <br/>
-            {this.state.notYet ? <Cherry game4={(index) => this.game(index)}/> : <Fruits fruits={this.state.fruits}/>}
+            {this.state.notYet ? <Cherry level={this.state.level} counter={this.counter()} howManyTimesYouWon={this.state.howManyTimesYouWon} game4={(index) => this.game(index)}/> : <Fruits level={this.state.level} counter={this.counter()} howManyTimesYouWon={this.state.howManyTimesYouWon} fruits={this.state.fruits}/>}
             <br/>
             {this.state.didYouWin ? <div><h1>You Won!!!</h1><button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button><button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button></div> : !this.state.notYet ? <div><h1 color='blue'>You Lost :(</h1><button className="btn btn-primary" onClick={() => this.newGame()}>New game</button></div> : ''}
           </div>

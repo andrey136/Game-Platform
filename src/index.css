@@ -52,12 +52,6 @@ pre{
   font-size: large;
   color: #000000;
 }
-p{
-   text-align: center;
-   font-family: "Ink Free";
-   font-size: large;
-   color: #000000;
- }
 
 .stopPlaying{
   text-align: left;
@@ -75,4 +69,18 @@ div{
 }
 button{
   font-family: Arial;
+}
+
+.returnBack{
+  margin-right: 1500px;
+}
+
+.padding{
+  padding-top: 200px;
+}
+
+h4{
+  text-align: center!important;
+  color: chocolate;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
