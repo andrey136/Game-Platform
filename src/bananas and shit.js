@@ -161,9 +161,10 @@ class BananasAndShit extends Component {
     return arr;
   }
 
-  playNow(){
+  playNow(bet){
     this.setState({
       description : false,
+      bet : bet
     })
   }
   stopPlaying(){
@@ -175,7 +176,7 @@ class BananasAndShit extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.description ? <Description menu={() => this.props.menu()} playNow={() => this.playNow()}/> :
+        {this.state.description ? <Description money={this.state.money} menu={() => this.props.menu()} playNow={(bet) => this.playNow(bet)}/> :
           <div>
 
             <h2>
