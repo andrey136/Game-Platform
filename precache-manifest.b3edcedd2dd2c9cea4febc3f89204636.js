@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "eca7682b9da5aedea51e",
+    "revision": "93d17c8c18c350a28847",
     "url": "/bananas-and-shit/static/css/main.d43abca0.chunk.css"
   },
   {
-    "revision": "eca7682b9da5aedea51e",
-    "url": "/bananas-and-shit/static/js/main.eca7682b.chunk.js"
+    "revision": "93d17c8c18c350a28847",
+    "url": "/bananas-and-shit/static/js/main.93d17c8c.chunk.js"
   },
   {
     "revision": "b4e6a5970f319a6c60f5",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/bananas-and-shit/static/js/runtime~main.3787fcc6.js"
   },
   {
-    "revision": "295d6bc130ca8699089d294f3fb64e94",
+    "revision": "f087dd7f6668b662604e9710192e4411",
     "url": "/bananas-and-shit/index.html"
   }
 ];
