@@ -20,6 +20,7 @@ class Statistics extends Component {
         <pre>Chance is {5 - this.props.level}/5</pre>
         <pre>Possible gain is {this.props.counter}$</pre>
         <pre>It's the {this.props.howManyTimesYouWon + 1}{this.lastLettersOfTheNumber()} trial</pre>
+        <pre>Your bet is {this.props.bet}$</pre>
       </div>
     );
   }

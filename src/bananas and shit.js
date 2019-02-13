@@ -187,9 +187,9 @@ class BananasAndShit extends Component {
             <br/>
             <h2>Counter: {this.state.counter}</h2>
             <br/>
-            {this.state.notYet ? <Cherry level={this.state.level} counter={this.counter()} howManyTimesYouWon={this.state.howManyTimesYouWon} game4={(index) => this.game(index)}/> : <Fruits level={this.state.level} counter={this.counter()} howManyTimesYouWon={this.state.howManyTimesYouWon} fruits={this.state.fruits}/>}
+            {this.state.notYet ? <Cherry level={this.state.level} bet={this.state.bet} counter={this.counter()} howManyTimesYouWon={this.state.howManyTimesYouWon} game4={(index) => this.game(index)}/> : <Fruits bet={this.state.bet} level={this.state.level} counter={this.counter()} howManyTimesYouWon={this.state.howManyTimesYouWon} fruits={this.state.fruits}/>}
             <br/>
-            {this.state.didYouWin ? <div><h1>You Won!!!</h1><button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button><button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button></div> : !this.state.notYet ? <div><h1 color='blue'>You Lost :(</h1><button className="btn btn-primary" onClick={() => this.newGame()}>New game</button></div> : ''}
+            {this.state.didYouWin ? <div><h1>You Won!!!</h1><button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button><button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button></div> : !this.state.notYet ? <div><h1 color='blue'>You Lost :(</h1>{this.state.bet <= this.state.money && <button className="btn btn-primary" onClick={() => this.newGame()}>New game</button>}</div> : ''}
           </div>
         }
       </div>

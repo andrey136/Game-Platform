@@ -15,26 +15,22 @@ class description extends Component {
   }
 
   inputChange(value) {
-    value = value.split('').filter(el => ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "$"].includes(el)).join('');
+    let del = !value.includes('$');
+    value = value.split('').filter(el => ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"].includes(el)).join('') + '$';
+    if (value[0] === '0' && value.length !== 2) value = value.slice(1);
     console.log(value);
-    if(this.state.inputText === value){
+    if (this.state.inputText === '0$') {
       this.setState({
         inputText: value,
       });
-    } else if (this.state.inputText === '0$') {
+    } else if(this.state.inputText === value && value.length !== 2 && del){
       this.setState({
-        inputText: value[value.length - 1] + '$',
+        inputText: value.slice(0, -2) + '$',
       });
-    } else if (!value.includes('$')) {
-      if (value.length === 1) {
-        this.setState({
-          inputText: '0$'
-        })
-      } else {
-        this.setState({
-          inputText: value.slice(0, -1) + '$'
-        })
-      }
+    } else if (value.length === 2) {
+      this.setState({
+        inputText: '0$'
+      });
     } else {
       this.setState({
         inputText: value.split('$').join('') + '$',
@@ -65,6 +61,8 @@ class description extends Component {
           5. If you've got crap you can't go on playing.
           <br/>
           6. The greater level you have, the more crap is hidden beside the cherries.
+          <br/>
+          7. Your bet can't be lower 10$.
           <br/>
           Good luck!!!
         </pre>

@@ -21,7 +21,7 @@ class Fruits extends Component {
         <img src={this.linksOfPhotos(2)} alt=""/>
         <img src={this.linksOfPhotos(3)} alt=""/>
         <img src={this.linksOfPhotos(4)} alt=""/>
-        <Statistics howManyTimesYouWon={this.props.howManyTimesYouWon} level={this.props.level} counter={this.props.counter}/>
+        <Statistics bet={this.props.bet} howManyTimesYouWon={this.props.howManyTimesYouWon} level={this.props.level} counter={this.props.counter}/>
       </div>
     );
   }
