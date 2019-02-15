@@ -16,7 +16,7 @@ class BananasAndShit extends Component {
       level : 1,
       howManyTimesYouWon : 0,
       afterWards: true,
-      money : 50,
+      money : 1000,
       areYouPlaying : false,
       description : true,
       bet : 10,
