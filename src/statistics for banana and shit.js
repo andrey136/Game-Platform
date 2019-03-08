@@ -16,6 +16,7 @@ class Statistics extends Component {
   render() {
     return (
       <div className="App statistics">
+
         <h4>Statistics:</h4>
         <pre>Chance is {5 - this.props.level}/5</pre>
         <pre>Possible gain is {this.props.counter}$</pre>
