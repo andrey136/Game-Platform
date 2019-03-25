@@ -12,8 +12,16 @@ class ChooseAGame extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>Hi Stranger. If you are lucky, check out my new game below!</h1>
+        <header className="header">
+
+          <nav>
+            <ul>
+              <h1>Game Platform</h1>
+              <li><a href="">Home</a></li>
+              <li><a href="">Description</a></li>
+              <li><a href="">About us</a></li>
+            </ul>
+          </nav>
         </header>
         <main>
           <br/>
