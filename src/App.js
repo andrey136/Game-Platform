@@ -30,6 +30,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <header className="header">
+          <nav>
+            <ul>
+              <h1>Game Platform</h1>
+              <li><a href="ChooseAGame.js">Home</a></li>
+              <li><a href="">Description</a></li>
+              <li><a href="banana%20description.js">Game</a></li>
+            </ul>
+          </nav>
+        </header>
         {!this.state['isGameChosen'] && <ChooseAGame chosenGame={(name) => this.chosenGame(name)}/>}
         {this.state['bananasAndShit'] && <BananasAndShit menu={() => this.menu()} chosenGame={(name) => this.chosenGame(name)}/>}
       </div>
