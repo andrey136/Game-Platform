@@ -35,7 +35,7 @@ class App extends Component {
             <ul>
               <h1>Game Platform</h1>
               <li><a href="ChooseAGame.js">Home</a></li>
-              <li><a href="">Description</a></li>
+              <li><a href="">Descri\ption</a></li>
               <li><a href="banana%20description.js">Game</a></li>
             </ul>
           </nav>
