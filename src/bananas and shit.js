@@ -197,11 +197,16 @@ class BananasAndShit extends Component {
                 <Fruits bet={this.state.bet} level={this.state.level} counter={this.counter()}
                         howManyTimesYouWon={this.state.howManyTimesYouWon} fruits={this.state.fruits}/>}
               <br/>
-              {this.state.didYouWin ? <div><h4>You Won!!!</h4>
-                <button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button>
-                <button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button>
+              {this.state.didYouWin ? <div>
+                  <h4>You Won!!!</h4>
+                  <div className="options">
+                      <button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button>
+                      <button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button>
+                  </div>
               </div> : !this.state.notYet ? <div><h4 color='blue'>You Lost :(</h4>{this.state.bet <= this.state.money &&
-              <button className="btn btn-primary" onClick={() => this.newGame()}>New game</button>}</div> : ''}
+                  <div className="options">
+                      <button className="btn btn-primary" onClick={() => this.newGame()}>New game</button>
+                      </div>}</div> : ''}
             </main>
           </div>
         }
