@@ -159,3 +159,39 @@ p {
 footer{
     margin-top: 10%;
 }
+
+/*banana - game - process*/
+
+main{
+    width: 960px;
+    margin: 0 auto;
+}
+.game_process h2{
+    font-size: 5em;
+    font-weight: 300;
+    line-height: 1.2;
+    color: yellow;
+    text-align: center;
+    margin: 10px;
+}
+
+.cherry{
+    display: flex;
+    margin-bottom: 20px;
+}
+.cherry img{
+    width: 176px;
+    margin-right: 20px;
+}
+
+.cherry img:last-child{
+    margin-right: 0;
+}
+
+.app_statistics p{
+    text-align: center;
+}
+
+.fruits{
+
+}

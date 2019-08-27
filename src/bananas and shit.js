@@ -185,8 +185,8 @@ class BananasAndShit extends Component {
               <button className="stopPlaying returnBack"  onClick={() => this.props.menu()}>Return back</button>
               <p>Account {this.state.money}$</p>
             </div>
-            <main>
-              <h2 className="display-2">Level
+            <main className="game_process">
+              <h2>Level
                 № {this.state.afterWards ? this.state.level : this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 || this.state.howManyTimesYouWon === 9 ? this.state.level - 1 : this.state.level}</h2>
               <br/>
               <h3>Counter: {this.state.counter}</h3>
