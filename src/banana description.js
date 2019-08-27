@@ -42,14 +42,14 @@ class description extends Component {
   render() {
     return (
       <div className="App">
-        <h2>
-          <button className="stopPlaying returnBack"  onClick={() => this.props.menu()}>Return back</button>
-          Account {this.props.money}$
-        </h2>
-        <h1 className="padding">Description</h1>
-        <br/>
-        <h3>Hello my dear friend. Today I'm going to show you my first computer game and explain the rules of it.</h3>
-        <pre>
+        <div className="topNav">
+            <button className="stopPlaying returnBack"  onClick={() => this.props.menu()}>Return back</button>
+            <p>Account {this.props.money}$</p>
+        </div>
+        <article>
+          <h1 className="padding">Description</h1>
+          <h3>Hello my dear friend. Today I'm going to show you my first computer game and explain the rules of it.</h3>
+          <p>
           1. There are 4 levels.
           <br/>
           2. You choose one of the five cherries.
@@ -65,8 +65,8 @@ class description extends Component {
           7. Your bet can't be lower 10$.
           <br/>
           Good luck!!!
-        </pre>
-        <br/>
+        </p>
+        </article>
         <br/>
         <div className="input-group mb-3 size">
           <input type="text" className="form-control" placeholder="Your bet" onChange={(e) => this.inputChange(e.target.value)}

@@ -16,12 +16,11 @@ class Statistics extends Component {
   render() {
     return (
       <div className="App statistics">
-
         <h4>Statistics:</h4>
-        <pre>Chance is {5 - this.props.level}/5</pre>
-        <pre>Possible gain is {this.props.counter}$</pre>
-        <pre>It's the {this.props.howManyTimesYouWon + 1}{this.lastLettersOfTheNumber()} trial</pre>
-        <pre>Your bet is {this.props.bet}$</pre>
+        <p>Chance is {5 - this.props.level}/5</p>
+        <p>Possible gain is {this.props.counter}$</p>
+        <p>It's the {this.props.howManyTimesYouWon + 1}{this.lastLettersOfTheNumber()} trial</p>
+        <p>Your bet is {this.props.bet}$</p>
       </div>
     );
   }

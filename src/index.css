@@ -1,117 +1,161 @@
-body {
-  margin: 0 auto;
-  padding: 0;
-  font-size: 20px;
+body, html {
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* navigation */
+
+header {
+    display: inline-block;
+    background: black;
+    width: 100%;
+    text-align: left;
 }
-/*h1{
-  text-align: center!important;
-  color: gold;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}*/
-.color{
-  color : blue;
+
+header h1{
+    padding: 10px 0;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #ff9d8f, -1px 1px 0 #fff, 1px 1px 0 #8fccff;
 }
-.try-again{
-  text-align: center;
+
+a {
+    color: aliceblue;
 }
-h2{
-  text-align: center!important;
-  color : orange;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+a:hover {
+    color: deepskyblue;
+    cursor: pointer;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+/* h1, h2, h3 */
+
+h1 {
+    display: block;
+    font-size: 2em;
+    text-align: center;
+    color: gold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding-bottom: 20px;
+}
+
+h2 {
+    text-align: center !important;
+    color: orange;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h3 {
+    text-align: center !important;
+    color: chocolate;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h4 {
+    text-align: center !important;
+    color: chocolate;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.topNav{
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 20px;
+}
+
+.topNav p{
+    color: orange;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 2em;
+    width: 200px;
+    float: right;
+}
+
+/*article, p */
+
+article {
+    width: 500px;
+    margin: 0 auto;
+}
+
+article h3 {
+    margin-bottom: 70px;
+}
+
+p {
+    font-family: "Ink Free";
+    font-size: large;
+    color: #000000;
+}
+
+/* classes */
+.shadow{
+    background: rgba(35, 37, 33, 0.96);
+    box-shadow: black 5px 5px 10px 5px;
+}
+
+.color {
+    color: blue;
+}
+
+.try-again {
+    text-align: center;
 }
 
 .warning {
-  text-align: center;
-  color: #212529;
-  background-color: #ffc107;
-  border: 1px solid transparent;
-  cursor: pointer;
-  margin-top: 30px;
-  border-radius: .25rem;
-  padding: .375rem .75rem;
+    text-align: center;
+    color: #212529;
+    background-color: #ffc107;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
 }
 
-h3{
-  text-align: center!important;
-  color: chocolate;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+.stopPlaying {
+    color: #212529;
+    background-color: #ffc107;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    height: 80%;
+    width: 15%;
+    text-align: center;
+    font-size: 1.2em;
 }
 
-pre{
-  text-align: center;
-  font-family: "Ink Free";
-  font-size: large;
-  color: #000000;
+.size {
+    padding-left: 40%;
+    width: 60%;
+}
+/*classes for games*/
+
+.banana h2{
+    padding: 20px 0;
 }
 
-.stopPlaying{
-  text-align: left;
-  margin-left: 0px;
-  color: #212529;
-  background-color: #ffc107;
-  border: 1px solid transparent;
-  cursor: pointer;
-  margin-top: 30px;
-  border-radius: .25rem;
-  padding: .375rem .75rem;
-}
-div{
-  text-align: center;
-}
-button{
-  font-family: Arial;
+.banana img{
+    border-right: 3px solid rgba(9, 9, 9, 0.83);
+    border-bottom: 3px solid black;
+    border-left: 3px solid white;
+    border-top: 3px solid white;
 }
 
-.returnBack{
-  margin-right: 75%;
+.banana .shadow{
+    width: 940px;
+    padding: 20px;
+    margin: 20px auto 0;
 }
 
-.padding{
-  padding-top: 4%;
+.banana button{
+    width: 10%;
+    margin-left: 45%;
 }
+/* footer */
 
-h4{
-  text-align: center!important;
-  color: chocolate;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.size{
-  padding-left: 40%;
-  width: 60%;
-}
-
-img{
-  padding-bottom: 21px;
-}
-
-li{
-  display: inline;
-  margin-right:1.5em;
-  font-family: Times;
-  font-size: 1.2em;
-}
-h1{
-  display: inline;
-  font-size: 1.5em;
-  color: White;
-  margin-right: 2em;
-}
-a{
-  color: aliceblue;
-}
-a:hover{
-  color: deepskyblue;
-  cursor: pointer;
-}
-.header{
-  display: inline-block;
-  background: black;
-  width: 100%;
-  text-align: left;
+footer{
+    margin-top: 10%;
 }

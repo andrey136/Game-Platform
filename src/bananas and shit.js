@@ -181,12 +181,10 @@ class BananasAndShit extends Component {
         {this.state.description ?
           <Description money={this.state.money} menu={() => this.props.menu()} playNow={(bet) => this.playNow(bet)}/> :
           <div>
-            <header>
-              <h1>
-                <button className="stopPlaying returnBack" onClick={() => this.stopPlaying()}>Return back</button>
-                Account {this.state.money}$
-              </h1>
-            </header>
+            <div className="topNav">
+              <button className="stopPlaying returnBack"  onClick={() => this.props.menu()}>Return back</button>
+              <p>Account {this.state.money}$</p>
+            </div>
             <main>
               <h2 className="display-2">Level
                 № {this.state.afterWards ? this.state.level : this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 || this.state.howManyTimesYouWon === 9 ? this.state.level - 1 : this.state.level}</h2>
