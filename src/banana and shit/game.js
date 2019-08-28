@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Cherry from './cherry';
 import Fruits from './Fruits';
-import './index.css';
-import Description from './banana description';
+import '../index.css';
+import Description from './description';
 
 class BananasAndShit extends Component {
   constructor(props) {

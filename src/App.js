@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import ChooseAGame from './ChooseAGame';
-import BananasAndShit from './bananas and shit';
+import BananasAndShit from './banana and shit/game';
 
 class App extends Component {
   constructor(props){

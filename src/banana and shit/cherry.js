@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './App.css';
-import Statistics from './statistics for banana and shit';
+import '../App.css';
+import Statistics from './statistics';
 
 class Cherry extends Component {
     constructor(props) {
