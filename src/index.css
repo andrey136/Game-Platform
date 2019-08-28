@@ -21,12 +21,17 @@ a {
     color: aliceblue;
 }
 
+
+
 a:hover {
     color: deepskyblue;
     cursor: pointer;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+
+
+/*@media only screen and (min-width: 980px){*/
 
 /* h1, h2, h3 */
 
@@ -122,8 +127,8 @@ p {
     cursor: pointer;
     border-radius: .25rem;
     padding: .375rem .75rem;
-    height: 80%;
-    width: 15%;
+    height: 42px;
+    width: 130px;
     text-align: center;
     font-size: 1.2em;
 }
@@ -276,3 +281,4 @@ section{
     display: flex;
     justify-content: center;
 }
+/*}*/

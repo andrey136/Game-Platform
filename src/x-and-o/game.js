@@ -69,6 +69,12 @@ class game extends Component {
               });
           }
       }
+      if(this.state.count === 8 && !this.state._end){
+        this.setState({
+          _end: true,
+          str: 'Draw) Nobody wins!'
+         })
+      }
   }
 
   again() {
