@@ -71,10 +71,35 @@ class game extends Component {
       }
   }
 
+  again() {
+    this.setState({
+      str: '',
+      count: 0,
+      chosenItems_X: [],
+      chosenItems_O: [],
+      winIndexs: [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]],
+      trueOrFalse: [],
+      _end: false,
+    });
+  }
+
+  back(){
+    this.props.menu('Xs_and_Os');
+    this.props.account(this.props.money);
+  }
+
   render() {
     return (
+      <div>
+        <div className="topNav">
+          <button className="stopPlaying returnBack"  onClick={() => this.back()}>Return back</button>
+          <p>Account {this.props.money}$</p>
+        </div>
       <section id="game">
-        <h1>Game Xs and Os</h1>
+        <h1>Game Xs and Os
+          <br/>
+          2 players only!
+        </h1>
         <div className="container">
           <div onClick={() => this.chosen(0)}>
             {this.state.chosenItems_O.includes(0) && <img src={Os} alt=""/>}
@@ -114,7 +139,11 @@ class game extends Component {
           </div>
         </div>
         {this.state._end && <h2>{this.state.str}</h2>}
+        {this.state._end && <div class="flex-center">
+          <button className="btn btn-primary" onClick={() => this.again()}>Play Again</button>
+        </div>}
       </section>
+      </div>
     );
   }
 }
