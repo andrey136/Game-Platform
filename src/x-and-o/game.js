@@ -31,11 +31,11 @@ class game extends Component {
       this.setState({
         count: ++count,
       });
-      count > 4 && this.end();
+      count > 4 && this.finish();
     }
   }
 
-  end(){
+  finish(){
       let trueOrFalse = this.state.trueOrFalse;
       if(trueOrFalse.length === 0) {
           this.state.winIndexs.map(el => {
