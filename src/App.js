@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 import ChooseAGame from './ChooseAGame';
 import BananasAndShit from './banana and shit/game';
-import X_and_O from './x-and-o/description';
+import X_and_O from './x-and-o/game';
 
 class App extends Component {
   constructor(props){
