@@ -262,3 +262,8 @@ section{
     border-right: 2px solid black;
     border-top: 2px solid black;
 }
+
+.container div img{
+    width: 120px;
+    height: 120px;
+}
