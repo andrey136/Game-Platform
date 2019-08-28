@@ -16,19 +16,19 @@ class BananasAndShit extends Component {
       level: 1,
       howManyTimesYouWon: 0,
       afterWards: true,
-      money: 1000,
+      money: this.props.money,
       areYouPlaying: false,
       description: true,
       bet: 10,
     }
   }
-
+/*
   plus() {
     this.setState({
       money: this.state.money + 100,
     })
   }
-
+*/
   tryAgain() {
     this.setState({
       notYet: true,
@@ -96,7 +96,6 @@ class BananasAndShit extends Component {
       level = 1;
       howManyTimesYouWon = 0;
     } else {
-      console.log(this.counter());
       didYouWin = true;
       counter = this.counter();
       howManyTimesYouWon += 1;
@@ -175,14 +174,26 @@ class BananasAndShit extends Component {
     })
   }
 
+  back(){
+    if(this.state.description){
+
+      this.props.menu('bananas-and-shit');
+      this.props.account(this.state.money);
+    } else {
+      this.setState({
+        description: true,
+      })
+    }
+  }
+
   render() {
     return (
       <div className="App">
         {this.state.description ?
-          <Description money={this.state.money} menu={() => this.props.menu()} playNow={(bet) => this.playNow(bet)}/> :
+          <Description money={this.state.money} menu={() => this.back()} playNow={(bet) => this.playNow(bet)}/> :
           <div>
             <div className="topNav">
-              <button className="stopPlaying returnBack"  onClick={() => this.props.menu()}>Return back</button>
+              <button className="stopPlaying returnBack"  onClick={() => this.back()}>Return back</button>
               <p>Account {this.state.money}$</p>
             </div>
             <main className="game_process">

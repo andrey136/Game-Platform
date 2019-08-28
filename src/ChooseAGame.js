@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
-import image from'./image.jpeg';
+import image from './photos/banana-photos/image.jpeg';
+import xo from './photos/X_and_O-photos/xo.png';
 
 class ChooseAGame extends Component {
   constructor(props){
@@ -11,11 +12,7 @@ class ChooseAGame extends Component {
   }
 
   render() {
-    /*<div className="X-and-O">
-            <div className="shadow">
-              <img src="" alt=""/>
-            </div>
-          </div>*/
+    /**/
     return (
         <div>
           <div className="banana">
@@ -25,7 +22,13 @@ class ChooseAGame extends Component {
             <h2>Bananas and Shit</h2>
             <button className="btn btn-success" onClick={() => this.props.chosenGame('BananasAndShit')}><b>Try it</b></button>
           </div>
-
+          <div className="X-and-O">
+            <div className="shadow">
+              <img src={xo} alt=""/>
+            </div>
+            <h2>Xs and Os</h2>
+            <button className="btn btn-success" onClick={() => this.props.chosenGame('X-and-O')}><b>Try it</b></button>
+          </div>
         </div>
           );
   }
