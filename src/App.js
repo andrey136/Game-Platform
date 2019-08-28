@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 import ChooseAGame from './ChooseAGame';
 import BananasAndShit from './banana and shit/game';
+import X_and_O from './x-and-o/description';
 
 class App extends Component {
   constructor(props){
@@ -10,14 +11,23 @@ class App extends Component {
     this.state = {
       isGameChosen : false,
       bananasAndShit : false,
+      xAndO : false,
     }
   }
 
   chosenGame(name){
-    this.setState({
-      isGameChosen : true,
-      bananasAndShit : true,
-    })
+    console.log(name === 'BananasAndShit');
+    if(name === 'BananasAndShit'){
+      this.setState({
+        isGameChosen : true,
+        bananasAndShit : true,
+    });
+    } else if(name === 'X-and-O'){
+      this.setState({
+        isGameChosen: true,
+        xAndO : true,
+      })
+    }
   }
 
   menu(){
@@ -47,6 +57,7 @@ class App extends Component {
         </header>
         {!this.state['isGameChosen'] && <ChooseAGame chosenGame={(name) => this.chosenGame(name)}/>}
         {this.state['bananasAndShit'] && <BananasAndShit menu={() => this.menu()} chosenGame={(name) => this.chosenGame(name)}/>}
+        {this.state['xAndO'] && <X_and_O menu={() => this.menu()} chosenGame={(name) => this.chosenGame(name)}/>}
         <footer></footer>
       </div>
     );
