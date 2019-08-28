@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bananas-and-shit/precache-manifest.3ff586cafae6463e73ec3d2719373a16.js"
+  "/bananas-and-shit/precache-manifest.c2afc322d003d171a11a53155a8ab355.js"
 );
 
 workbox.clientsClaim();
