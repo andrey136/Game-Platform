@@ -20,14 +20,18 @@ class ChooseAGame extends Component {
               <img src={image} alt=""/>
             </div>
             <h2>Bananas and Shit</h2>
-            <button className="btn btn-success" onClick={() => this.props.chosenGame('BananasAndShit')}><b>Try it</b></button>
+            <div className="flex-center">
+              <button className="btn btn-success" onClick={() => this.props.chosenGame('BananasAndShit')}><b>Try it</b></button>
+            </div>
           </div>
           <div className="X-and-O">
             <div className="shadow">
               <img src={xo} alt=""/>
             </div>
             <h2>Xs and Os</h2>
-            <button className="btn btn-success" onClick={() => this.props.chosenGame('X-and-O')}><b>Try it</b></button>
+            <div className="flex-center">
+              <button className="btn btn-success" onClick={() => this.props.chosenGame('X-and-O')}><b>Try it</b></button>
+            </div>
           </div>
         </div>
           );

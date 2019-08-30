@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import ChooseAGame from './ChooseAGame';
-import BananasAndShit from './banana and shit/game';
+import BananasAndShit from './banana and poop/game';
 import X_and_O from './x-and-o/game';
 
 class App extends Component {
@@ -62,15 +62,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div id="wrapper">
         <header>
           <nav>
             <h1>Game Platform</h1>
           </nav>
         </header>
-        {!this.state['isGameChosen'] && <ChooseAGame chosenGame={(name) => this.chosenGame(name)}/>}
-        {this.state['bananasAndShit'] && <BananasAndShit menu={(currentGame) => this.menu(currentGame)} chosenGame={(name) => this.chosenGame(name)} money={this.state.account} account={(money) => this.account(money)}/>}
-        {this.state['xAndO'] && <X_and_O chosenGame={(name) => this.chosenGame(name)} menu={(currentGame) => this.menu(currentGame)} money={this.state.account} account={(money) => this.account(money)}/>}
+        <div className="App">
+          {!this.state['isGameChosen'] && <ChooseAGame chosenGame={(name) => this.chosenGame(name)}/>}
+          {this.state['bananasAndShit'] && <BananasAndShit menu={(currentGame) => this.menu(currentGame)} chosenGame={(name) => this.chosenGame(name)} money={this.state.account} account={(money) => this.account(money)}/>}
+          {this.state['xAndO'] && <X_and_O chosenGame={(name) => this.chosenGame(name)} menu={(currentGame) => this.menu(currentGame)} money={this.state.account} account={(money) => this.account(money)}/>}
+        </div>
         <footer></footer>
       </div>
     );

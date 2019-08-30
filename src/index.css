@@ -3,16 +3,19 @@ body, html {
     padding: 0;
 }
 
+body{
+    background: rgba(126, 127, 128, 0.71);
+}
+
 /* navigation */
 
 header {
     display: inline-block;
     background: black;
     width: 100%;
-    text-align: left;
 }
 
-header h1{
+header h1 {
     padding: 10px 0;
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #ff9d8f, -1px 1px 0 #fff, 1px 1px 0 #8fccff;
 }
@@ -22,7 +25,6 @@ a {
 }
 
 
-
 a:hover {
     color: deepskyblue;
     cursor: pointer;
@@ -30,10 +32,7 @@ a:hover {
 }
 
 
-
-/*@media only screen and (min-width: 980px){*/
-
-/* h1, h2, h3 */
+/* h1, h2, h3, p */
 
 h1 {
     display: block;
@@ -48,7 +47,6 @@ h2 {
     text-align: center !important;
     color: orange;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    padding: 20px 0;
 }
 
 h3 {
@@ -63,32 +61,6 @@ h4 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.topNav{
-    width: 80%;
-    margin: 0 auto;
-    justify-content: center;
-    padding: 20px;
-}
-
-.topNav p{
-    color: orange;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    font-size: 2em;
-    width: 200px;
-    float: right;
-}
-
-/*article, p */
-
-article {
-    width: 500px;
-    margin: 0 auto;
-}
-
-article h3 {
-    margin-bottom: 70px;
-}
-
 p {
     font-family: "Ink Free";
     font-size: large;
@@ -96,189 +68,512 @@ p {
 }
 
 /* classes */
-.shadow{
+
+.shadow {
     background: rgba(35, 37, 33, 0.96);
     box-shadow: black 5px 5px 10px 5px;
-}
-
-.color {
-    color: blue;
-}
-
-.try-again {
-    text-align: center;
-}
-
-.warning {
-    text-align: center;
-    color: #212529;
-    background-color: #ffc107;
-    border: 1px solid transparent;
-    cursor: pointer;
-    border-radius: .25rem;
-    padding: .375rem .75rem;
-}
-
-
-.stopPlaying {
-    color: #212529;
-    background-color: #ffc107;
-    border: 1px solid transparent;
-    cursor: pointer;
-    border-radius: .25rem;
-    padding: .375rem .75rem;
-    height: 42px;
-    width: 130px;
-    text-align: center;
-    font-size: 1.2em;
-}
-
-.size {
-    padding-left: 40%;
-    width: 60%;
-}
-/*classes for games*/
-
-.banana{
-    width: 960px;
-    margin: 20px auto 0;
-}
-
-.banana img{
-    border-right: 3px solid rgba(9, 9, 9, 0.83);
-    border-bottom: 3px solid black;
-    border-left: 3px solid white;
-    border-top: 3px solid white;
-}
-
-.banana .shadow{
-    width: 940px;
     padding: 20px;
-    margin: 20px auto 0;
 }
 
-.banana button{
-    width: 10%;
-    margin-left: 45%;
-}
-/* footer */
+@media only screen and (min-width: 601px) {
+    nav h1{
+        width: 100%;
+        min-width: 960px;
+    }
+    h2{
+        padding: 20px 0;
+    }
+    header{
+        position: fixed;
+        height: 60px;
+    }
 
-footer{
-    margin-top: 10%;
+    .ssize{
+        padding-left: 40%;
+        width: 60%;
+    }
+
+    .topNav {
+        width: 960px;
+        margin: 0 auto;
+        justify-content: space-between;
+        display: flex;
+        padding: 20px 50px;
+    }
+
+    .topNav p {
+        color: orange;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        font-size: 2em;
+        width: 250px;
+    }
+
+    /*article, p */
+
+    article {
+        width: 850px;
+        margin: 0 auto;
+    }
+
+    article h3 {
+        margin-bottom: 70px;
+    }
+
+    article p {
+        text-align: center;
+    }
+
+
+    /* classes */
+
+    #wrapper{
+        overflow: hidden;
+    }
+
+    .App{
+        width: 960px;
+        margin: 60px auto 0;
+        background: #fff;
+        padding: 20px 0;
+        height: 100%;
+        padding-bottom:1000em;
+        margin-bottom: -1000em;
+    }
+
+    .try-again {
+        text-align: center;
+    }
+
+    .warning {
+        text-align: center;
+        color: #212529;
+        background-color: #ffc107;
+        border: 1px solid transparent;
+        cursor: pointer;
+        border-radius: .25rem;
+        padding: .375rem .75rem;
+    }
+
+
+    .stopPlaying {
+        color: #212529;
+        background-color: #ffc107;
+        border: 1px solid transparent;
+        cursor: pointer;
+        border-radius: .25rem;
+        padding: .375rem .75rem;
+        height: 42px;
+        width: 130px;
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .size {
+        padding-left: 40%;
+        width: 60%;
+    }
+
+    /*classes for games*/
+
+    .background-blue {
+
+    }
+
+    .banana {
+        width: 960px;
+    }
+
+    .banana img {
+        border-right: 3px solid rgba(9, 9, 9, 0.83);
+        border-bottom: 3px solid black;
+        border-left: 3px solid white;
+        border-top: 3px solid white;
+        width: 880px;
+    }
+
+    .banana .shadow {
+        width: 920px;
+        padding: 20px;
+        margin: 0 auto ;
+    }
+
+    .banana button {
+        width: 10%;
+    }
+
+    /* footer */
+
+    footer {
+        margin-top: 10%;
+    }
+
+    /*banana - game - process*/
+
+    main {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    .game_process h2 {
+        font-size: 5em;
+        font-weight: 300;
+        line-height: 1.2;
+        color: yellow;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .cherry {
+        display: flex;
+        margin-bottom: 20px;
+        width: 960px;
+        padding: 10px;
+    }
+
+    .cherry img {
+        width: 172px;
+        height: 172px;
+        margin-right: 20px;
+    }
+
+    .cherry img:last-child {
+        margin-right: 0;
+    }
+
+    .app_statistics p {
+        text-align: center;
+    }
+
+    .options {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0 0;
+    }
+
+    .options button {
+        margin-right: 20px;
+        width: 14%;
+    }
+
+    .options button:last-child {
+        margin-right: 0;
+    }
+
+    /* X and O */
+
+    .X-and-O .shadow img {
+        background: #c8c6ff;
+        width: 800px;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+        border-left: 3px solid white;
+        border-top: 3px solid white;
+    }
+
+    .X-and-O .shadow {
+        width: 840px;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .X-and-O {
+        width: 960px;
+        margin: 40px auto 0;
+    }
+
+    .X-and-O button {
+        width: 10%;
+    }
+
+    /* container elements*/
+    section {
+        width: 960px;
+        margin: 30px auto;
+    }
+
+    .container {
+        padding: 0;
+        margin: 0 auto;
+        width: 368px;
+        height: 368px;
+        display: flex;
+        background: rgba(255, 228, 196, 0.54);
+        flex-wrap: wrap;
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+
+    .container div {
+        margin: 0;
+        width: 122px;
+        height: 122px;
+        border-right: 2px solid black;
+        border-top: 2px solid black;
+    }
+
+    .container div img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #game section button {
+        width: 10%;
+        margin-left: 45%;
+    }
+
+    .flex-center {
+        display: flex;
+        justify-content: center;
+    }
 }
 
-/*banana - game - process*/
 
-main{
-    width: 960px;
-    margin: 0 auto;
-}
-.game_process h2{
-    font-size: 5em;
-    font-weight: 300;
-    line-height: 1.2;
-    color: yellow;
-    text-align: center;
-    margin: 10px;
-}
+@media only screen and (max-width: 600px) and (min-width: 400px){
+    body{
+        font-size: 7px;
+    }
 
-.cherry{
-    display: flex;
-    margin-bottom: 20px;
-}
-.cherry img{
-    width: 176px;
-    height: 176px;
-    margin-right: 20px;
-}
+    nav h1{
+        width: 100%;
+        font-size: 2.5em;
+    }
 
-.cherry img:last-child{
-    margin-right: 0;
-}
+    header{
+        height: 40px;
+    }
 
-.app_statistics p{
-    text-align: center;
-}
+    .topNav {
+        width: 400px;
+        margin: 0 auto;
+        justify-content: space-between;
+        display: flex;
+        padding: 10px 25px;
+    }
 
-.options{
-    display: flex;
-    justify-content: center;
-    margin: 20px 0 0;
-}
+    .topNav p {
+        color: orange;
+        font-size: 3em;
+        width: 130px;
+    }
 
-.options button{
-    margin-right: 20px;
-    width: 14%;
-}
+    /*article, p */
 
-.options button:last-child{
-    margin-right: 0;
-}
+    article {
+        width: 400px;
+        margin: 0 auto;
+    }
 
-/* X and O */
+    article h3 {
+        margin-bottom: 30px;
+        font-size: 2.7em;
+        text-shadow: none;
+        padding: 0 10px;
+    }
 
-.X-and-O .shadow img{
-    background: #c8c6ff;
-    width: 800px;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
-    border-left: 3px solid white;
-    border-top: 3px solid white;
-}
+    article p {
+        text-align: center;
+        padding: 0 10px;
+        font-size: 1.8em;
+    }
 
-.X-and-O .shadow{
-    width: 840px;
-    padding: 20px;
-    margin: 0 auto;
-}
+    article h1{
+        font-size: 4em;
+    }
 
-.X-and-O{
-    width: 960px;
-    margin: 40px auto 0;
-}
 
-.X-and-O button{
-    width: 10%;
-    margin-left: 45%;
-}
+    /* classes */
+    .ssize{
+        width: 50%;
+        margin: 0 auto;
+    }
 
-/* container elements*/
-section{
-    width: 960px;
-    margin: 30px auto;
-}
+    #wrapper{
+        overflow: hidden;
+    }
 
-.container{
-    padding: 0;
-    margin: 0 auto;
-    width: 368px;
-    height: 368px;
-    display: flex;
-    background: rgba(255, 228, 196, 0.54);
-    flex-wrap: wrap;
-    border-left: 2px solid black;
-    border-bottom: 2px solid black;
-}
+    .App{
+        width: 400px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 10px 0;
+        height: 100%;
+        padding-bottom:1000em;
+        margin-bottom: -1000em;
+    }
 
-.container div{
-    margin:0;
-    width: 122px;
-    height: 122px;
-    border-right: 2px solid black;
-    border-top: 2px solid black;
-}
+    .try-again {
+        text-align: center;
+    }
 
-.container div img{
-    width: 120px;
-    height: 120px;
-}
-#game section  button {
-    width: 10%;
-    margin-left: 45%;
-}
+    .warning {
+        text-align: center;
+        color: #212529;
+        background-color: #ffc107;
+        border: 1px solid transparent;
+        cursor: pointer;
+        border-radius: .25rem;
+        padding: .375rem .75rem;
+    }
 
-.flex-center{
-    display: flex;
-    justify-content: center;
+
+    .stopPlaying {
+        color: #212529;
+        background-color: #ffc107;
+        border: 1px solid transparent;
+        cursor: pointer;
+        border-radius: .25rem;
+        height: 31px;
+        width: 100px;
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .size {
+        padding-left: 40%;
+        width: 60%;
+    }
+
+    /*classes for games*/
+
+    .background-blue {
+
+    }
+
+    .banana {
+        width: 400px;
+    }
+
+    .banana img {
+        border-right: 3px solid rgba(9, 9, 9, 0.83);
+        border-bottom: 3px solid black;
+        border-left: 3px solid white;
+        border-top: 3px solid white;
+        width: 340px;
+    }
+
+    .banana .shadow {
+        width: 360px;
+        padding: 10px;
+        margin: 0 auto ;
+    }
+
+    /* footer */
+
+    footer {
+        margin-top: 10%;
+    }
+
+    /*banana - game - process*/
+
+    main {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .game_process h2 {
+        font-size: 5em;
+        font-weight: 300;
+        line-height: 1.2;
+        color: yellow;
+        text-align: center;
+        margin: 5px;
+    }
+
+    .cherry {
+        display: flex;
+        margin-bottom: 10px;
+        width: 400px;
+        padding: 5px;
+    }
+
+    .cherry img {
+        width: 70px;
+        height: 70px;
+        margin-right: 10px;
+    }
+
+    .cherry img:last-child {
+        margin-right: 0;
+    }
+
+    .app_statistics p {
+        text-align: center;
+    }
+
+    .options {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 0;
+    }
+
+    .options button {
+        margin-right: 10px;
+    }
+
+    .options button:last-child {
+        margin-right: 0;
+    }
+
+    /* X and O */
+
+    .X-and-O .shadow img {
+        background: #c8c6ff;
+        width: 300px;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+        border-left: 3px solid white;
+        border-top: 3px solid white;
+    }
+
+    .X-and-O .shadow {
+        width: 320px;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .X-and-O {
+        width: 400px;
+        margin: 20px auto 0;
+    }
+
+    /* container elements*/
+    section {
+        width: 400px;
+        margin: 15px auto;
+    }
+
+    .container {
+        padding: 0;
+        margin: 0 auto;
+        width: 358px;
+        height: 358px;
+        display: flex;
+        background: rgba(255, 228, 196, 0.54);
+        flex-wrap: wrap;
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+
+    .container div {
+        margin: 0;
+        width: 118.6px;
+        height: 118.6px;
+        border-right: 2px solid black;
+        border-top: 2px solid black;
+    }
+
+    .container div img {
+        width: 116.6px;
+        height: 116.6px;
+    }
+
+    #game section button {
+        width: 10%;
+        margin-left: 45%;
+    }
+
+    .flex-center {
+        display: flex;
+        justify-content: center;
+    }
 }
-/*}*/

@@ -2,7 +2,7 @@
   "name": "jjjj",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://andrey136.github.io/bananas-and-shit",
+  "homepage": "https://andrey136.github.io/Game-Platform",
   "dependencies": {
     "react": "^16.8.1",
     "react-dom": "^16.8.1",

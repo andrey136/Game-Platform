@@ -41,13 +41,13 @@ class description extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <div className="topNav">
             <button className="stopPlaying returnBack"  onClick={() => this.props.menu()}>Return back</button>
             <p>Account {this.props.money}$</p>
         </div>
         <article>
-          <h1 className="padding">Description</h1>
+          <h1>Description</h1>
           <h3>Hello my dear friend. Today I'm going to show you my first computer game and explain the rules of it.</h3>
           <p>
           1. There are 4 levels.
@@ -68,8 +68,8 @@ class description extends Component {
         </p>
         </article>
         <br/>
-        <div className="input-group mb-3 size">
-          <input type="text" className="form-control" placeholder="Your bet" onChange={(e) => this.inputChange(e.target.value)}
+        <div className="input-group mb-3 ssize">
+          <input type="text" className="form-control input" placeholder="Your bet" onChange={(e) => this.inputChange(e.target.value)}
                  aria-label="Recipient's username" aria-describedby="button-addon2" value={this.state.inputText}/>
             <div className="input-group-append">
               {(this.state.inputText === '0$' || +this.state.inputText.slice(0,-1) > this.props.money) ?

@@ -188,7 +188,7 @@ class BananasAndShit extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         {this.state.description ?
           <Description money={this.state.money} menu={() => this.back()} playNow={(bet) => this.playNow(bet)}/> :
           <div>
