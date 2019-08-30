@@ -52,6 +52,7 @@ class BananasAndShit extends Component {
   }
 
   takeMoney() {
+    localStorage.setItem('account', `${this.state.money + this.state.counter}`);
     this.setState({
       counter: 0,
       notYet: true,
@@ -85,7 +86,10 @@ class BananasAndShit extends Component {
     let counter = this.state.counter;
     let isItCrap = false;
     let money = this.state.money;
-    if (!this.state.areYouPlaying) money -= this.state.bet;
+    if (!this.state.areYouPlaying) {
+      money -= this.state.bet;
+      localStorage.setItem('account', `${money}`);
+    }
     let arr1;
     if (level === 1) arr1 = this.game4(x);
     if (level === 2) arr1 = this.game3(x);
