@@ -6,7 +6,6 @@ body, html {
 body{
     background: rgba(126, 127, 128, 0.71);
 }
-
 /* navigation */
 
 header {
@@ -328,9 +327,10 @@ p {
 }
 
 
-@media only screen and (max-width: 600px) and (min-width: 400px){
+@media only screen and (max-width: 600px){
     body{
         font-size: 7px;
+        background: white;
     }
 
     nav h1{
@@ -397,8 +397,7 @@ p {
         background: #fff;
         padding: 10px 0;
         height: 100%;
-        padding-bottom:1000em;
-        margin-bottom: -1000em;
+
     }
 
     .try-again {
