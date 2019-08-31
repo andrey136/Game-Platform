@@ -3,6 +3,11 @@ import Cherry from './cherry';
 import Fruits from './Fruits';
 import '../index.css';
 import Description from './description';
+import {game1} from './functionsForBananaApp';
+import {game2} from './functionsForBananaApp';
+import {game3} from './functionsForBananaApp';
+import {game4} from './functionsForBananaApp';
+import {counter} from './functionsForBananaApp';
 
 class BananasAndShit extends Component {
   constructor(props) {
@@ -22,13 +27,7 @@ class BananasAndShit extends Component {
       bet: 10,
     }
   }
-/*
-  plus() {
-    this.setState({
-      money: this.state.money + 100,
-    })
-  }
-*/
+
   tryAgain() {
     this.setState({
       notYet: true,
@@ -66,24 +65,11 @@ class BananasAndShit extends Component {
     });
   }
 
-  counter() {
-    if (this.state.howManyTimesYouWon === 0) return Math.round(this.state.bet * 1.238);
-    if (this.state.howManyTimesYouWon === 1) return Math.round(this.state.bet * 1.547);
-    if (this.state.howManyTimesYouWon === 2) return Math.round(this.state.bet * 1.934);
-    if (this.state.howManyTimesYouWon === 3) return Math.round(this.state.bet * 2.417);
-    if (this.state.howManyTimesYouWon === 4) return Math.round(this.state.bet * 4.028);
-    if (this.state.howManyTimesYouWon === 5) return Math.round(this.state.bet * 6.714);
-    if (this.state.howManyTimesYouWon === 6) return Math.round(this.state.bet * 11.19);
-    if (this.state.howManyTimesYouWon === 7) return Math.round(this.state.bet * 27.974);
-    if (this.state.howManyTimesYouWon === 8) return Math.round(this.state.bet * 69.936);
-    if (this.state.howManyTimesYouWon === 9) return Math.round(this.state.bet * 349.681);
-  }
-
   game(x) {
     let howManyTimesYouWon = this.state.howManyTimesYouWon;
     let level = this.state.level;
     let didYouWin = false;
-    let counter = this.state.counter;
+    let c = this.state.counter;
     let isItCrap = false;
     let money = this.state.money;
     if (!this.state.areYouPlaying) {
@@ -91,17 +77,17 @@ class BananasAndShit extends Component {
       localStorage.setItem('account', `${money}`);
     }
     let arr1;
-    if (level === 1) arr1 = this.game4(x);
-    if (level === 2) arr1 = this.game3(x);
-    if (level === 3) arr1 = this.game2(x);
-    if (level === 4) arr1 = this.game1(x);
+    if (level === 1) arr1 = game4(x);
+    if (level === 2) arr1 = game3(x);
+    if (level === 3) arr1 = game2(x);
+    if (level === 4) arr1 = game1(x);
     if (!arr1[x]) {
-      counter = 0;
+      c = 0;
       level = 1;
       howManyTimesYouWon = 0;
     } else {
       didYouWin = true;
-      counter = this.counter();
+      c = counter(this.state.howManyTimesYouWon, this.state.bet);
       howManyTimesYouWon += 1;
     }
     if (howManyTimesYouWon === 4) level += 1;
@@ -111,7 +97,7 @@ class BananasAndShit extends Component {
       notYet: false,
       fruits: arr1,
       isItCrap: isItCrap,
-      counter: counter,
+      counter: c,
       didYouWin: didYouWin,
       level: level,
       howManyTimesYouWon: howManyTimesYouWon,
@@ -119,50 +105,6 @@ class BananasAndShit extends Component {
       money: money,
       areYouPlaying: true,
     })
-  }
-
-  game4(x) {
-    let c = +Math.floor(Math.random() * 5);
-    let arr = [];
-    for (let i = 0; i < 5; i++) {
-      i === c ? arr.push(0) : arr.push(1);
-    }
-    return arr;
-  }
-
-  game3(x) {
-    let c1 = +Math.floor(Math.random() * 5);
-    let c2 = +Math.floor(Math.random() * 5);
-    for (let i = c1; i === c2; i += 0) {
-      c2 = +Math.floor(Math.random() * 5);
-    }
-    let arr = [];
-    for (let i = 0; i < 5; i++) {
-      i === c1 || i === c2 ? arr.push(0) : arr.push(1);
-    }
-    return arr;
-  }
-
-  game2(x) {
-    let c1 = +Math.floor(Math.random() * 5);
-    let c2 = +Math.floor(Math.random() * 5);
-    for (let i = c1; i === c2; i += 0) {
-      c2 = +Math.floor(Math.random() * 5);
-    }
-    let arr = [];
-    for (let i = 0; i < 5; i++) {
-      i === c1 || i === c2 ? arr.push(1) : arr.push(0);
-    }
-    return arr;
-  }
-
-  game1(x) {
-    let c = +Math.floor(Math.random() * 5);
-    let arr = [];
-    for (let i = 0; i < 5; i++) {
-      i === c ? arr.push(1) : arr.push(0);
-    }
-    return arr;
   }
 
   playNow(bet) {
@@ -202,26 +144,35 @@ class BananasAndShit extends Component {
             </div>
             <main className="game_process">
               <h2>Level
-                № {this.state.afterWards ? this.state.level : this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 || this.state.howManyTimesYouWon === 9 ? this.state.level - 1 : this.state.level}</h2>
+                № {this.state.afterWards ? this.state.level :
+                  this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 ||
+                  this.state.howManyTimesYouWon === 9 ? this.state.level - 1 : this.state.level}</h2>
               <br/>
               <h3>Counter: {this.state.counter}</h3>
               <br/>
-              {this.state.notYet ? <Cherry level={this.state.level} bet={this.state.bet} counter={this.counter()}
-                                           howManyTimesYouWon={this.state.howManyTimesYouWon}
-                                           game4={(index) => this.game(index)}/> :
-                <Fruits bet={this.state.bet} level={this.state.level} counter={this.counter()}
+              {this.state.notYet ?
+                <Cherry level={this.state.level} bet={this.state.bet}
+                        counter={counter(this.state.howManyTimesYouWon, this.state.bet)}
+                        howManyTimesYouWon={this.state.howManyTimesYouWon}
+                        game4={(index) => this.game(index)}/> :
+                <Fruits bet={this.state.bet} level={this.state.level} counter={this.state.counter}
                         howManyTimesYouWon={this.state.howManyTimesYouWon} fruits={this.state.fruits}/>}
               <br/>
-              {this.state.didYouWin ? <div>
+              {this.state.didYouWin ?
+                <div>
                   <h4>You Won!!!</h4>
                   <div className="options">
                       <button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button>
                       <button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button>
                   </div>
-              </div> : !this.state.notYet ? <div><h4 color='blue'>You Lost :(</h4>{this.state.bet <= this.state.money &&
+                </div> : !this.state.notYet ?
+                <div>
+                  <h4 color='blue'>You Lost :(</h4>
+                  {this.state.bet <= this.state.money &&
                   <div className="options">
                       <button className="btn btn-primary" onClick={() => this.newGame()}>New game</button>
-                      </div>}</div> : ''}
+                  </div>}
+                </div> : ''}
             </main>
           </div>
         }

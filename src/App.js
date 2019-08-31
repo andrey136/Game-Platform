@@ -3,6 +3,7 @@ import './index.css';
 import ChooseAGame from './ChooseAGame';
 import BananasAndShit from './banana and poop/game';
 import X_and_O from './x-and-o/game';
+import {getFromLocalStorage} from "./banana and poop/functionsForBananaApp";
 
 class App extends Component {
   constructor(props) {
@@ -12,29 +13,16 @@ class App extends Component {
       isGameChosen: false,
       bananasAndShit: false,
       xAndO: false,
-      account: this.getFromLocalStorage(),
+      account: getFromLocalStorage(),
     }
-  }
-
-  getFromLocalStorage() {
-    if (localStorage.getItem('account') === null) {
-      localStorage.setItem('account','1000');
-    }
-    return +localStorage.getItem('account');
   }
 
   chosenGame(name) {
-    if (name === 'BananasAndShit') {
-      this.setState({
-        isGameChosen: true,
-        bananasAndShit: true,
-      });
-    } else if (name === 'X-and-O') {
-      this.setState({
-        isGameChosen: true,
-        xAndO: true,
-      })
-    }
+    this.setState({
+      isGameChosen: true,
+      xAndO: name === 'X-and-O',
+      bananasAndShit: name === 'BananasAndShit'
+    });
   }
 
   account(money) {
@@ -44,27 +32,11 @@ class App extends Component {
   }
 
   menu(currentGame) {
-    if (currentGame === 'Xs_and_Os') {
-      this.setState({
-        isGameChosen: false,
-        xAndO: false,
-      });
-    } else if (currentGame === 'bananas-and-shit') {
-      this.setState({
-        isGameChosen: false,
-        bananasAndShit: false,
-      });
-    }
-    /*<header className="header">
-          <nav>
-            <ul>
-              <h1>Game Platform</h1>
-              <li><a href="ChooseAGame.js">Home</a></li>
-              <li><a href="">Description</a></li>
-              <li><a href="banana%20description.js">Game</a></li>
-            </ul>
-          </nav>
-        </header>*/
+    this.setState({
+      isGameChosen: false,
+      xAndO: false,
+      bananasAndShit: false,
+    });
   }
 
   render() {
