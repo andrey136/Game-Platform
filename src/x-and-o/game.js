@@ -98,7 +98,7 @@ class game extends Component {
     return (
       <div>
         <div className="topNav">
-          <button className="stopPlaying returnBack"  onClick={() => this.back()}>Return back</button>
+          <button className="stopPlaying returnBack"  onClick={() => this.back()}>Back</button>
           <p>Account {this.props.money}$</p>
         </div>
       <section id="game">

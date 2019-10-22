@@ -25,7 +25,7 @@ class description extends Component {
     return (
       <div>
         <div className="topNav">
-          <button className="stopPlaying returnBack" onClick={() => this.props.menu()}>Return back</button>
+          <button className="stopPlaying returnBack" onClick={() => this.props.menu()}>Back</button>
           <p>Account {this.props.money}$</p>
         </div>
         <article>

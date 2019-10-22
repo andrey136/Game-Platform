@@ -3,9 +3,10 @@ body, html {
     padding: 0;
 }
 
-body{
+body {
     background: rgba(126, 127, 128, 0.71);
 }
+
 /* navigation */
 
 header {
@@ -76,19 +77,21 @@ p {
 }
 
 @media only screen and (min-width: 601px) {
-    nav h1{
+    nav h1 {
         width: 100%;
         min-width: 960px;
     }
-    h2{
+
+    h2 {
         padding: 20px 0;
     }
-    header{
+
+    header {
         position: fixed;
         height: 60px;
     }
 
-    .ssize{
+    .ssize {
         padding-left: 40%;
         width: 60%;
     }
@@ -109,7 +112,6 @@ p {
     }
 
     /*article, p */
-
     article {
         width: 850px;
         margin: 0 auto;
@@ -125,18 +127,17 @@ p {
 
 
     /* classes */
-
-    #wrapper{
+    #wrapper {
         overflow: hidden;
     }
 
-    .App{
+    .App {
         width: 960px;
         margin: 60px auto 0;
         background: #fff;
         padding: 20px 0;
         height: 100%;
-        padding-bottom:1000em;
+        padding-bottom: 1000em;
         margin-bottom: -1000em;
     }
 
@@ -174,7 +175,6 @@ p {
     }
 
     /*classes for games*/
-
     .background-blue {
 
     }
@@ -194,7 +194,7 @@ p {
     .banana .shadow {
         width: 920px;
         padding: 20px;
-        margin: 0 auto ;
+        margin: 0 auto;
     }
 
     .banana button {
@@ -202,13 +202,11 @@ p {
     }
 
     /* footer */
-
     footer {
         margin-top: 10%;
     }
 
     /*banana - game - process*/
-
     main {
         width: 960px;
         margin: 0 auto;
@@ -260,7 +258,6 @@ p {
     }
 
     /* X and O */
-
     .X-and-O .shadow img {
         background: #c8c6ff;
         width: 800px;
@@ -328,37 +325,36 @@ p {
 }
 
 
-@media only screen and (max-width: 600px){
-    body{
+@media only screen and (max-width: 600px) {
+    body {
         font-size: 7px;
         background: white;
     }
 
-    nav h1{
+    nav h1 {
         width: 100%;
         font-size: 2.5em;
     }
 
-    header{
+    header {
         height: 40px;
     }
 
 
     .topNav {
-    width: 90%;
-    margin: 0 auto;
-    justify-content: space-between;
-    display: flex;
-    padding: 10px 25px;
-}
+        width: 90%;
+        margin: 0 auto;
+        justify-content: space-between;
+        display: flex;
+        padding: 10px 0;
+    }
 
     .topNav p {
-    color: orange;
-    font-size: 3em;
-    width: 35%;
-}
-    /*article, p */
+        color: orange;
+        font-size: 2.5em;
+    }
 
+    /*article, p */
     article {
         width: 90%;
         margin: 0 auto;
@@ -377,7 +373,7 @@ p {
         font-size: 1.8em;
     }
 
-    article h1{
+    article h1 {
         font-size: 4em;
     }
 
@@ -387,12 +383,11 @@ p {
     /*    width: 50%;*/
     /*    margin: 0 auto;*/
     /*}*/
-
-    #wrapper{
+    #wrapper {
         overflow: hidden;
     }
 
-    .App{
+    .App {
         width: 90%;
         margin: 0 auto;
         background: #fff;
@@ -423,7 +418,7 @@ p {
         cursor: pointer;
         border-radius: .25rem;
         height: 31px;
-        width: 30%;
+        width: 100px;
         text-align: center;
         font-size: 2em;
     }
@@ -434,37 +429,35 @@ p {
     }
 
     /*classes for games*/
-
     .background-blue {
 
     }
 
     .banana {
-        width: 100%;  /* 400 */
+        width: 100%; /* 400 */
     }
 
     .banana .shadow {
         width: 90%; /*360px*/
         padding: 10px;
-        margin: 0 auto ;
+        margin: 0 auto;
     }
+
     .banana img {
-    border-right: 3px solid rgba(9, 9, 9, 0.83);
-    border-bottom: 3px solid black;
-    border-left: 3px solid white;
-    border-top: 3px solid white;
-    width: 100%; /* 340 */
-}
+        border-right: 3px solid rgba(9, 9, 9, 0.83);
+        border-bottom: 3px solid black;
+        border-left: 3px solid white;
+        border-top: 3px solid white;
+        width: 100%; /* 340 */
+    }
 
 
     /* footer */
-
     footer {
         margin-top: 10%;
     }
 
     /*banana - game - process*/
-
     main {
         width: 90%;
         margin: 0 auto;
@@ -515,7 +508,6 @@ p {
     }
 
     /* X and O */
-
     .X-and-O .shadow img {
         background: #c8c6ff;
         width: 100%; /* 300 */

@@ -8,6 +8,7 @@ import {game2} from './functionsForBananaApp';
 import {game3} from './functionsForBananaApp';
 import {game4} from './functionsForBananaApp';
 import {counter} from './functionsForBananaApp';
+import back from '../photos/banana-photos/back_big.png';
 
 class BananasAndShit extends Component {
   constructor(props) {
@@ -139,7 +140,7 @@ class BananasAndShit extends Component {
           <Description money={this.state.money} menu={() => this.back()} playNow={(bet) => this.playNow(bet)}/> :
           <div>
             <div className="topNav">
-              <button className="stopPlaying returnBack"  onClick={() => this.back()}>Return back</button>
+              <button className="stopPlaying returnBack"  onClick={() => this.back()}>Back</button>
               <p>Account {this.state.money}$</p>
             </div>
             <main className="game_process">
