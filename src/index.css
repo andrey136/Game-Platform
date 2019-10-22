@@ -46,6 +46,7 @@ h2 {
     text-align: center !important;
     color: orange;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-top: 0.5em;
 }
 
 h3 {
@@ -342,20 +343,20 @@ p {
         height: 40px;
     }
 
+
     .topNav {
-        width: 400px;
-        margin: 0 auto;
-        justify-content: space-between;
-        display: flex;
-        padding: 10px 25px;
-    }
+    width: 400px;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px 25px;
+}
 
     .topNav p {
-        color: orange;
-        font-size: 3em;
-        width: 130px;
-    }
-
+    color: orange;
+    font-size: 3em;
+    width: 130px;
+}
     /*article, p */
 
     article {
@@ -392,7 +393,7 @@ p {
     }
 
     .App{
-        width: 400px;
+        width: 90%;
         margin: 0 auto;
         background: #fff;
         padding: 10px 0;
@@ -439,22 +440,22 @@ p {
     }
 
     .banana {
-        width: 400px;
-    }
-
-    .banana img {
-        border-right: 3px solid rgba(9, 9, 9, 0.83);
-        border-bottom: 3px solid black;
-        border-left: 3px solid white;
-        border-top: 3px solid white;
-        width: 340px;
+        width: 100%;  /* 400 */
     }
 
     .banana .shadow {
-        width: 360px;
+        width: 90%; /*360px*/
         padding: 10px;
         margin: 0 auto ;
     }
+    .banana img {
+    border-right: 3px solid rgba(9, 9, 9, 0.83);
+    border-bottom: 3px solid black;
+    border-left: 3px solid white;
+    border-top: 3px solid white;
+    width: 100%; /* 340 */
+}
+
 
     /* footer */
 
@@ -517,7 +518,7 @@ p {
 
     .X-and-O .shadow img {
         background: #c8c6ff;
-        width: 300px;
+        width: 100%; /* 300 */
         border-right: 3px solid black;
         border-bottom: 3px solid black;
         border-left: 3px solid white;
@@ -525,13 +526,13 @@ p {
     }
 
     .X-and-O .shadow {
-        width: 320px;
+        width: 80%;
         padding: 10px;
         margin: 0 auto;
     }
 
     .X-and-O {
-        width: 400px;
+        width: 90%;
         margin: 20px auto 0;
     }
 
