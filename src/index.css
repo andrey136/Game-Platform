@@ -345,7 +345,7 @@ p {
 
 
     .topNav {
-    width: 400px;
+    width: 90%;
     margin: 0 auto;
     justify-content: space-between;
     display: flex;
@@ -355,12 +355,12 @@ p {
     .topNav p {
     color: orange;
     font-size: 3em;
-    width: 130px;
+    width: 35%;
 }
     /*article, p */
 
     article {
-        width: 400px;
+        width: 90%;
         margin: 0 auto;
     }
 
@@ -383,10 +383,10 @@ p {
 
 
     /* classes */
-    .ssize{
-        width: 50%;
-        margin: 0 auto;
-    }
+    /*.ssize{*/
+    /*    width: 50%;*/
+    /*    margin: 0 auto;*/
+    /*}*/
 
     #wrapper{
         overflow: hidden;
@@ -423,7 +423,7 @@ p {
         cursor: pointer;
         border-radius: .25rem;
         height: 31px;
-        width: 100px;
+        width: 30%;
         text-align: center;
         font-size: 2em;
     }
@@ -466,7 +466,7 @@ p {
     /*banana - game - process*/
 
     main {
-        width: 400px;
+        width: 90%;
         margin: 0 auto;
     }
 
@@ -481,15 +481,15 @@ p {
 
     .cherry {
         display: flex;
-        margin-bottom: 10px;
-        width: 400px;
+        width: 90%;
         padding: 5px;
+        margin: 0 auto 10px;
     }
 
     .cherry img {
-        width: 70px;
-        height: 70px;
-        margin-right: 10px;
+        width: 17.5%; /* 75% */
+        height: 17.5%;
+        margin-right: 2.5%;
     }
 
     .cherry img:last-child {
