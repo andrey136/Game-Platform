@@ -9,6 +9,7 @@ import {game3} from './functionsForBananaApp';
 import {game4} from './functionsForBananaApp';
 import {counter} from './functionsForBananaApp';
 import back from '../photos/banana-photos/back_big.png';
+import Statistics from "./statistics";
 
 class BananasAndShit extends Component {
   constructor(props) {
@@ -174,6 +175,7 @@ class BananasAndShit extends Component {
                       <button className="btn btn-primary" onClick={() => this.newGame()}>New game</button>
                   </div>}
                 </div> : ''}
+              <Statistics bet={this.state.bet} howManyTimesYouWon={this.state.howManyTimesYouWon} level={this.state.level} counter={this.state.counter}/>
             </main>
           </div>
         }

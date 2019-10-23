@@ -76,6 +76,14 @@ p {
     padding: 20px;
 }
 
+.app_statistics p {
+    text-align: center;
+}
+
+.app_statistics{
+    margin-top: 20px;
+}
+
 @media only screen and (min-width: 961px) {
     nav h1 {
         width: 100%;
@@ -236,10 +244,6 @@ p {
 
     .cherry img:last-child {
         margin-right: 0;
-    }
-
-    .app_statistics p {
-        text-align: center;
     }
 
     .options {
@@ -487,10 +491,6 @@ p {
 
     .cherry img:last-child {
         margin-right: 0;
-    }
-
-    .app_statistics p {
-        text-align: center;
     }
 
     .options {
