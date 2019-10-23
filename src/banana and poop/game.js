@@ -110,6 +110,7 @@ class BananasAndShit extends Component {
   }
 
   playNow(bet) {
+    if(bet === 'continue') bet = this.state.bet;
     this.setState({
       description: false,
       bet: bet
@@ -138,7 +139,7 @@ class BananasAndShit extends Component {
     return (
       <div>
         {this.state.description ?
-          <Description money={this.state.money} menu={() => this.back()} playNow={(bet) => this.playNow(bet)}/> :
+          <Description money={this.state.money} menu={() => this.back()} playNow={(bet) => this.playNow(bet)} areYouPlaying={this.state.areYouPlaying}/> :
           <div>
             <div className="topNav">
               <button className="stopPlaying returnBack"  onClick={() => this.back()}>Back</button>
