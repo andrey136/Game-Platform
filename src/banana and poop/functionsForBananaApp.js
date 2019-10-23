@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+const arr = ['26062003$', '2002126$'];
+
 export const game4 = (x) => {
   let c = +Math.floor(Math.random() * 5);
   let arr = [];
@@ -81,22 +83,30 @@ export const inputChange =  (value, inputText) => {
       return value.slice(0, -2) + '$';
   } else if (value.length === 2) {
     return '0$';
-  } else if (value === '28062003$'){
+  } else if (arr.includes(value)){
     console.log('CHEATING');
-    cheating();
+    cheating(value);
+    return '0$';
+  } else if(value === '12345678$' && localStorage.getItem('user') !== 'stranger'){
+    localStorage.setItem('user', 'stranger');
     return '0$';
   } else {
       return value.split('$').join('') + '$';
   }
 };
 
-function cheating(){
+function cheating(code){
+  if(code === '26062003$')localStorage.setItem('user', 'Алина');
+  if(code === '2002126$')localStorage.setItem('user', 'Андрей');
   localStorage.setItem('account', '10000');
 }
 
 export const getFromLocalStorage = () => {
+  console.log('here');
   if (localStorage.getItem('account') === null) {
     localStorage.setItem('account', '1000');
+    localStorage.setItem('user', 'stranger');
   }
+  if(localStorage.getItem('user') === null)localStorage.setItem('user', 'stranger');
   return +localStorage.getItem('account');
 }
