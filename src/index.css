@@ -3,6 +3,8 @@ body, html {
     padding: 0;
 }
 
+
+
 body {
     background: rgba(126, 127, 128, 0.71);
 }
@@ -85,6 +87,46 @@ p {
 }
 
 @media only screen and (min-width: 961px) {
+
+    /* register form */
+    .flex-center{
+    }
+
+    .register-form .flex-center{
+        padding: 20px;
+    }
+
+    .register-form{
+        width: 600px;
+        height: 450px;
+        border: 2px solid rgba(126, 85, 255, 0.62);
+        background: rgba(195, 217, 255, 0.8);
+        margin: 10% auto;
+        padding: 50px;
+        border-radius: 15px;
+        position: relative;
+    }
+
+    .register-form h1{
+        text-align: center;
+        font-size: 2.5em;
+        color: #282828;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .register-form input{
+        width: 490px;
+        padding: 10px;
+        margin: 30px 0;
+        border: none;
+    }
+
+    .password{
+        color: #575757;
+    }
+
+
+
     nav h1 {
         width: 100%;
         min-width: 960px;
@@ -341,6 +383,41 @@ p {
 
     header {
         height: 40px;
+    }
+    /* Register */
+
+
+    .register-form .flex-center{
+        padding: 15px;
+    }
+
+    .register-form{
+        width: 80%;
+        height: 75%;
+        border: 2px solid rgba(126, 85, 255, 0.62);
+        background: rgba(195, 217, 255, 0.8);
+        margin: 10% auto;
+        padding: 3% 10%;
+        border-radius: 15px;
+        position: relative;
+    }
+
+    .register-form h1{
+        text-align: center;
+        font-size: 5em;
+        color: #282828;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    .register-form input{
+        width: 100%;
+        padding: 10px;
+        margin: 5% auto;
+        border: none;
+    }
+
+    .password{
+        color: #575757;
     }
 
 
