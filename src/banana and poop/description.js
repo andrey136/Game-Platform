@@ -58,9 +58,9 @@ class description extends Component {
         <div className="input-group mb-3 ssize">
           <input type="text" className="form-control input" placeholder="Your bet"
                  onChange={(e) => this.inputChange(e.target.value)}
-                 aria-label="Recipient's username" aria-describedby="button-addon2" value={this.props.areYouPlaying ? "You can't bet. Continue playing" : this.state.inputText} disabled={this.props.areYouPlaying}/>
+                 aria-label="Recipient's username" aria-describedby="button-addon2" value={this.props.btnContinue ? "You can't bet. Continue playing" : this.state.inputText} disabled={this.props.btnContinue}/>
           <div className="input-group-append">
-            {this.props.areYouPlaying ?
+            {this.props.btnContinue ?
               <button className="btn btn-primary" onClick={() => this.playNow('continue')}>Continue</button> :
               (this.state.inputText === '0$' || +this.state.inputText.slice(0, -1) > this.props.money) ?
               <button className="btn btn-outline-secondary disabled" type="button" id="button-addon2">Play</button> :

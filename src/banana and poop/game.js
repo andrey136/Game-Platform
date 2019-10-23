@@ -27,6 +27,7 @@ class BananasAndShit extends Component {
       areYouPlaying: false,
       description: true,
       bet: 10,
+      btnContinue: false,
     }
   }
 
@@ -39,17 +40,23 @@ class BananasAndShit extends Component {
     });
   }
 
-  newGame() {
-    this.setState({
-      counter: 0,
-      notYet: true,
-      fruits: [],
-      didYouWin: false,
-      level: 1,
-      howManyTimesYouWon: 0,
-      afterWards: true,
-      areYouPlaying: false,
-    });
+  newGame(bet) {
+    if(bet === 'continue'){
+      this.playNow(bet);
+    } else {
+      this.setState({
+        counter: 0,
+        notYet: true,
+        fruits: [],
+        didYouWin: false,
+        level: 1,
+        howManyTimesYouWon: 0,
+        afterWards: true,
+        areYouPlaying: false,
+        bet: bet,
+        description: false,
+      });
+    }
   }
 
   takeMoney() {
@@ -106,10 +113,11 @@ class BananasAndShit extends Component {
       afterWards: false,
       money: money,
       areYouPlaying: true,
+      btnContinue: true
     })
   }
 
-  playNow(bet) {
+  playNow(bet) {//continue playing
     if(bet === 'continue') bet = this.state.bet;
     this.setState({
       description: false,
@@ -119,6 +127,7 @@ class BananasAndShit extends Component {
 
   stopPlaying() {
     this.setState({
+      btnContinue: false,
       description: true,
     })
   }
@@ -139,7 +148,7 @@ class BananasAndShit extends Component {
     return (
       <div>
         {this.state.description ?
-          <Description money={this.state.money} menu={() => this.back()} playNow={(bet) => this.playNow(bet)} areYouPlaying={this.state.areYouPlaying}/> :
+          <Description money={this.state.money} menu={() => this.back()} playNow={(bet) => this.newGame(bet)} areYouPlaying={this.state.areYouPlaying} btnContinue={this.state.btnContinue}/> :
           <div>
             <div className="topNav">
               <button className="stopPlaying returnBack"  onClick={() => this.back()}>Back</button>
@@ -171,10 +180,11 @@ class BananasAndShit extends Component {
                 </div> : !this.state.notYet ?
                 <div>
                   <h4 color='blue'>You Lost :(</h4>
-                  {this.state.bet <= this.state.money &&
                   <div className="options">
-                      <button className="btn btn-primary" onClick={() => this.newGame()}>New game</button>
-                  </div>}
+                    <button className="btn btn-primary" onClick={this.state.bet <= this.state.money ? () => this.newGame() : () => this.stopPlaying()}>
+                      {this.state.bet <= this.state.money ? "New game" : "Come Back"}</button>
+                  </div>
+
                 </div> : ''}
               <Statistics bet={this.state.bet} howManyTimesYouWon={this.state.howManyTimesYouWon} level={this.state.level} counter={this.state.counter}/>
             </main>

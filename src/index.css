@@ -100,8 +100,8 @@ p {
     }
 
     .ssize {
-        padding-left: 40%;
-        width: 60%;
+        padding-left: 20%;
+        width: 80%;
     }
 
     .topNav {
@@ -177,11 +177,10 @@ p {
         font-size: 1.2em;
     }
 
-    .size {
-        padding-left: 40%;
-        width: 60%;
-    }
-
+    /*.size {*/
+    /*    padding-left: 40%;*/
+    /*    width: 60%;*/
+    /*}*/
     /*classes for games*/
     .background-blue {
 
