@@ -97,7 +97,7 @@ export const inputChange =  (value, inputText) => {
 
 function cheating(code){
   if(code === '26062003$')localStorage.setItem('user', JSON.stringify({name: "Алина", status: "Best Friend", login: "alina33"}));
-  if(code === '2002126$')localStorage.setItem('user', JSON.stringify({name: "Андрей", status: "admin", login: "andrey.mardash@gmail.com"});
+  if(code === '2002126$')localStorage.setItem('user', JSON.stringify({name: "Андрей", status: "admin", login: "andrey.mardash@gmail.com"}));
   localStorage.setItem('account', '10000');
 }
 
@@ -105,8 +105,8 @@ export const getFromLocalStorage = () => {
   console.log('here');
   if (localStorage.getItem('account') === null) {
     localStorage.setItem('account', '1000');
-    localStorage.setItem('user', 'stranger');
+    localStorage.setItem('user', JSON.stringify({status: 'stranger'}));
   }
-  if(localStorage.getItem('user') === null)localStorage.setItem('user', 'stranger');
+  if(localStorage.getItem('user') === null)localStorage.setItem('user', JSON.stringify({status: 'stranger'}));
   return +localStorage.getItem('account');
 }

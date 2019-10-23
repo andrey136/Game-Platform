@@ -28,6 +28,7 @@ class BananasAndShit extends Component {
       description: true,
       bet: 10,
       btnContinue: false,
+      user: this.props.user,
     }
   }
 
@@ -144,15 +145,28 @@ class BananasAndShit extends Component {
     }
   }
 
+  addMoney(){
+    const user = JSON.parse(localStorage.getItem('user'));
+    let sum = +localStorage.getItem('account');
+    console.log(this.state.account);
+    if(user.status === 'Best Friend' || user.status === 'admin'){
+      sum += 5000;
+    } else if(user.status === 'user'){
+      sum += 100;
+    }
+    localStorage.setItem('account', `${sum}`);
+    this.setState({money: sum});
+  }
+
   render() {
     return (
       <div>
         {this.state.description ?
-          <Description money={this.state.money} menu={() => this.back()} playNow={(bet) => this.newGame(bet)} areYouPlaying={this.state.areYouPlaying} btnContinue={this.state.btnContinue}/> :
+          <Description money={this.state.money}  menu={() => this.back()} addMoney={() => this.addMoney()} playNow={(bet) => this.newGame(bet)} areYouPlaying={this.state.areYouPlaying} btnContinue={this.state.btnContinue}/> :
           <div>
             <div className="topNav">
               <button className="stopPlaying returnBack"  onClick={() => this.back()}>Back</button>
-              <p>Account {this.state.money}$</p>
+              <p><a href="">+</a>Account {this.state.money}$</p>
             </div>
             <main className="game_process">
               <h2>Level
