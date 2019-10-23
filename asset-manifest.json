@@ -1,7 +1,7 @@
 {
-  "main.css": "/Game-Platform/static/css/main.b35337cd.chunk.css",
-  "main.js": "/Game-Platform/static/js/main.474e4988.chunk.js",
-  "main.js.map": "/Game-Platform/static/js/main.474e4988.chunk.js.map",
+  "main.css": "/Game-Platform/static/css/main.9a9b25d3.chunk.css",
+  "main.js": "/Game-Platform/static/js/main.261e85b4.chunk.js",
+  "main.js.map": "/Game-Platform/static/js/main.261e85b4.chunk.js.map",
   "static/js/1.237973ff.chunk.js": "/Game-Platform/static/js/1.237973ff.chunk.js",
   "static/js/1.237973ff.chunk.js.map": "/Game-Platform/static/js/1.237973ff.chunk.js.map",
   "runtime~main.js": "/Game-Platform/static/js/runtime~main.805b85f4.js",
@@ -10,8 +10,8 @@
   "static/media/Os.png": "/Game-Platform/static/media/Os.b6bd35fa.png",
   "static/media/image.jpeg": "/Game-Platform/static/media/image.59975463.jpeg",
   "static/media/xo.png": "/Game-Platform/static/media/xo.9437273c.png",
-  "static/css/main.b35337cd.chunk.css.map": "/Game-Platform/static/css/main.b35337cd.chunk.css.map",
+  "static/css/main.9a9b25d3.chunk.css.map": "/Game-Platform/static/css/main.9a9b25d3.chunk.css.map",
   "index.html": "/Game-Platform/index.html",
-  "precache-manifest.6bab95629e29745cea59b8586966583a.js": "/Game-Platform/precache-manifest.6bab95629e29745cea59b8586966583a.js",
+  "precache-manifest.80a5a24c0a0f8065f78c369f6cc43d3a.js": "/Game-Platform/precache-manifest.80a5a24c0a0f8065f78c369f6cc43d3a.js",
   "service-worker.js": "/Game-Platform/service-worker.js"
 }
