@@ -42,9 +42,10 @@ class BananasAndShit extends Component {
   }
 
   newGame(bet) {
+    if(bet === undefined) bet = this.state.bet;
     if(bet === 'continue'){
       this.playNow(bet);
-    } else {
+    }  else {
       this.setState({
         counter: 0,
         notYet: true,
@@ -82,6 +83,7 @@ class BananasAndShit extends Component {
     let c = this.state.counter;
     let isItCrap = false;
     let money = this.state.money;
+    console.log(money);
     if (!this.state.areYouPlaying) {
       money -= this.state.bet;
       localStorage.setItem('account', `${money}`);
