@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "1d899c2165dbedbcb7e2",
+    "revision": "474e498868593c047733",
     "url": "/Game-Platform/static/css/main.b35337cd.chunk.css"
   },
   {
-    "revision": "1d899c2165dbedbcb7e2",
-    "url": "/Game-Platform/static/js/main.1d899c21.chunk.js"
+    "revision": "474e498868593c047733",
+    "url": "/Game-Platform/static/js/main.474e4988.chunk.js"
   },
   {
     "revision": "237973ffe57778ff9892",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/Game-Platform/static/media/xo.9437273c.png"
   },
   {
-    "revision": "8211e19f96ad92bbf3475ad897d084c8",
+    "revision": "53027768585ce0bdcd2ab18a4a9a4153",
     "url": "/Game-Platform/index.html"
   }
 ];
