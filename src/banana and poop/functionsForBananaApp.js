@@ -96,8 +96,8 @@ export const inputChange =  (value, inputText) => {
 };
 
 function cheating(code){
-  if(code === '26062003$')localStorage.setItem('user', 'Алина');
-  if(code === '2002126$')localStorage.setItem('user', 'Андрей');
+  if(code === '26062003$')localStorage.setItem('user', JSON.stringify({name: "Алина", status: "Best Friend", login: "alina33"}));
+  if(code === '2002126$')localStorage.setItem('user', JSON.stringify({name: "Андрей", status: "admin", login: "andrey.mardash@gmail.com"});
   localStorage.setItem('account', '10000');
 }
 
