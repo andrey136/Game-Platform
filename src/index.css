@@ -89,6 +89,17 @@ p {
 @media only screen and (min-width: 961px) {
 
     /* register form */
+    .ToDo a {
+        color: deeppink;
+        font-size: 1.5em;
+        outline-color: blue;
+    }
+
+    .ToDo {
+        width: 298px;
+        margin: 50px auto;
+    }
+
     .flex-center{
     }
 
@@ -496,12 +507,6 @@ p {
         font-size: 4em;
     }
 
-
-    /* classes */
-    /*.ssize{*/
-    /*    width: 50%;*/
-    /*    margin: 0 auto;*/
-    /*}*/
     #wrapper {
         overflow: hidden;
     }
@@ -548,8 +553,8 @@ p {
     }
 
     /*classes for games*/
-    .background-blue {
-
+    .ToDO {
+        display: none;
     }
 
     .banana {
