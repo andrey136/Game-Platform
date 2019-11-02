@@ -553,8 +553,34 @@ p {
     }
 
     /*classes for games*/
-    .ToDO {
-        display: none;
+    .ToDo{
+        width: 45%;
+        max-width: 304px;
+        margin: 30px auto 0;
+    }
+
+    .ToDo .shadow{
+        padding: 6%;
+    }
+
+    .ToDo .shadow img{
+        border-right: 3px solid rgba(9, 9, 9, 0.83);
+        border-bottom: 3px solid black;
+        border-left: 3px solid rgb(111, 235, 255);
+        border-top: 3px solid rgb(111, 235, 255);
+        width: 100%;
+    }
+
+    .ToDo a{
+        color: blue;
+        font-size: 2em;
+
+    }
+
+    .ToDo a:hover{
+        color: #7db875;
+        text-decoration: none;
+        text-shadow: none;
     }
 
     .banana {

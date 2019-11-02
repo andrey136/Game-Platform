@@ -13,7 +13,6 @@ class game extends Component {
       chosenItems_X: [],
       chosenItems_O: [],
       winIndexs: [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]],
-      trueOrFalse: [],
       _end: false,
     }
   }
@@ -35,46 +34,45 @@ class game extends Component {
     }
   }
 
-  finish(){
-      let trueOrFalse = this.state.trueOrFalse;
-      if(trueOrFalse.length === 0) {
-          this.state.winIndexs.map(el => {
-              trueOrFalse.push(el.every(cur => this.state.chosenItems_X.indexOf(cur) > -1));
-          });
-          console.log(trueOrFalse);
-          if (trueOrFalse.includes(true)) {
-              this.setState({
-                  _end: true,
-                  str: 'Player 1 wins',
-              });
-          } else {
-              this.setState({
-                  trueOrFalse: [],
-              });
-              trueOrFalse = [];
-          }
+  finish() {
+    let trueOrFalse = [];
+    let str = '';
+    let _end = false;
+    if (trueOrFalse.length === 0) {
+      this.state.winIndexs.map(el => {
+        trueOrFalse.push(el.every(cur => this.state.chosenItems_X.indexOf(cur) > -1));
+      });
+      console.log(trueOrFalse);
+      if (trueOrFalse.includes(true)) {
+        console.log('Player 1 wins');
+        str = 'Player 1 wins';
+        _end = true;
+      } else {
+        trueOrFalse = [];
       }
-      if(trueOrFalse.length === 0 && !this.state._end){
-          this.state.winIndexs.map(el => {
-              trueOrFalse.push(el.every(cur => this.state.chosenItems_O.indexOf(cur) > -1));
-          });
-          if(trueOrFalse.includes(true)){
-              this.setState({
-                  _end: true,
-                  str: 'Player 2 wins',
-              });
-          } else {
-              this.setState({
-                  trueOrFalse: [],
-              });
-          }
+    }
+    if (trueOrFalse.length === 0 && !_end) {
+      this.state.winIndexs.map(el => {
+        trueOrFalse.push(el.every(cur => this.state.chosenItems_O.indexOf(cur) > -1));
+      });
+      if (trueOrFalse.includes(true)) {
+        _end = true;
+        str = 'Player 2 wins';
+      } else {
+        trueOrFalse = [];
       }
-      if(this.state.count === 8 && !this.state._end){
-        this.setState({
-          _end: true,
-          str: 'Draw) Nobody wins!'
-         })
-      }
+    }
+    if (this.state.count === 8 && !_end && str === '') {
+      console.log("THE LAST");
+      _end = true;
+      str = 'Draw) Nobody wins!';
+    }
+    // Changes
+    this.setState({
+      _end: _end,
+      str: str,
+      trueOrFalse: [],
+    })
   }
 
   again() {
@@ -89,7 +87,7 @@ class game extends Component {
     });
   }
 
-  back(){
+  back() {
     this.props.menu('Xs_and_Os');
     this.props.account(this.props.money);
   }
@@ -98,57 +96,57 @@ class game extends Component {
     return (
       <div>
         <div className="topNav">
-          <button className="stopPlaying returnBack"  onClick={() => this.back()}>Back</button>
+          <button className="stopPlaying returnBack" onClick={() => this.back()}>Back</button>
           <p>Account {this.props.money}$</p>
         </div>
-      <section id="game">
-        <h1>Game Xs and Os
-          <br/>
-          2 players only!
-        </h1>
-        <div className="container">
-          <div onClick={() => this.chosen(0)}>
-            {this.state.chosenItems_O.includes(0) && <img src={Os} alt=""/>}
-            {this.state.chosenItems_X.includes(0) && <img src={Xs} alt=""/>}
+        <section id="game">
+          <h1>Game Xs and Os
+            <br/>
+            2 players only!
+          </h1>
+          <div className="container">
+            <div onClick={() => this.chosen(0)}>
+              {this.state.chosenItems_O.includes(0) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(0) && <img src={Xs} alt=""/>}
+            </div>
+            <div onClick={() => this.chosen(1)}>
+              {this.state.chosenItems_O.includes(1) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(1) && <img src={Xs} alt=""/>}
+            </div>
+            <div onClick={() => this.chosen(2)}>
+              {this.state.chosenItems_O.includes(2) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(2) && <img src={Xs} alt=""/>}
+            </div>
+            <div onClick={() => this.chosen(3)}>
+              {this.state.chosenItems_O.includes(3) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(3) && <img src={Xs} alt=""/>}
+            </div>
+            <div onClick={() => this.chosen(4)}>
+              {this.state.chosenItems_O.includes(4) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(4) && <img src={Xs} alt=""/>}
+            </div>
+            <div onClick={() => this.chosen(5)}>
+              {this.state.chosenItems_O.includes(5) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(5) && <img src={Xs} alt=""/>}
+            </div>
+            <div onClick={() => this.chosen(6)}>
+              {this.state.chosenItems_O.includes(6) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(6) && <img src={Xs} alt=""/>}
+            </div>
+            <div onClick={() => this.chosen(7)}>
+              {this.state.chosenItems_O.includes(7) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(7) && <img src={Xs} alt=""/>}
+            </div>
+            <div onClick={() => this.chosen(8)}>
+              {this.state.chosenItems_O.includes(8) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(8) && <img src={Xs} alt=""/>}
+            </div>
           </div>
-          <div onClick={() => this.chosen(1)}>
-            {this.state.chosenItems_O.includes(1) && <img src={Os} alt=""/>}
-            {this.state.chosenItems_X.includes(1) && <img src={Xs} alt=""/>}
-          </div>
-          <div onClick={() => this.chosen(2)}>
-            {this.state.chosenItems_O.includes(2) && <img src={Os} alt=""/>}
-            {this.state.chosenItems_X.includes(2) && <img src={Xs} alt=""/>}
-          </div>
-          <div onClick={() => this.chosen(3)}>
-            {this.state.chosenItems_O.includes(3) && <img src={Os} alt=""/>}
-            {this.state.chosenItems_X.includes(3) && <img src={Xs} alt=""/>}
-          </div>
-          <div onClick={() => this.chosen(4)}>
-            {this.state.chosenItems_O.includes(4) && <img src={Os} alt=""/>}
-            {this.state.chosenItems_X.includes(4) && <img src={Xs} alt=""/>}
-          </div>
-          <div onClick={() => this.chosen(5)}>
-            {this.state.chosenItems_O.includes(5) && <img src={Os} alt=""/>}
-            {this.state.chosenItems_X.includes(5) && <img src={Xs} alt=""/>}
-          </div>
-          <div onClick={() => this.chosen(6)}>
-            {this.state.chosenItems_O.includes(6) && <img src={Os} alt=""/>}
-            {this.state.chosenItems_X.includes(6) && <img src={Xs} alt=""/>}
-          </div>
-          <div onClick={() => this.chosen(7)}>
-            {this.state.chosenItems_O.includes(7) && <img src={Os} alt=""/>}
-            {this.state.chosenItems_X.includes(7) && <img src={Xs} alt=""/>}
-          </div>
-          <div onClick={() => this.chosen(8)}>
-            {this.state.chosenItems_O.includes(8) && <img src={Os} alt=""/>}
-            {this.state.chosenItems_X.includes(8) && <img src={Xs} alt=""/>}
-          </div>
-        </div>
-        {this.state._end && <h2>{this.state.str}</h2>}
-        {this.state._end && <div class="flex-center">
-          <button className="btn btn-primary" onClick={() => this.again()}>Play Again</button>
-        </div>}
-      </section>
+          {this.state._end && <h2>{this.state.str}</h2>}
+          {this.state._end && <div class="flex-center">
+            <button className="btn btn-primary" onClick={() => this.again()}>Play Again</button>
+          </div>}
+        </section>
       </div>
     );
   }
