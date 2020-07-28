@@ -16,26 +16,28 @@ class BananasAndShit extends Component {
     super(props);
 
     this.state = {
-      didYouLose: false, // when you take money the field "You Lost" doesn't show up
-      choosingCherry: true,//this var shows whether the user is shown a list of cherries or a list of bananas with crap
       counter: 0,
-      fruits: [], // the array of numbers 1s and 0s representing a banana(1) and crap(0)
+      notYet: true,
+      fruits: [],
+      didYouWin: false,
       level: 1,
       howManyTimesYouWon: 0,
-      areYouPlaying: false, // if a user started playing, he will be able to continue playing this game
-      description: true,  // shows the description field. When false the game starts
+      afterWards: true,
+      money: this.props.user.account,
+      areYouPlaying: false,
+      description: true,
       bet: 10,
-      //btnContinue: false,
-      user: this.props.user, // user info
-      showButtonsWinsDefeat: false, // an issue when the user needs to be shown the info that he won or lost. Sometimes he doesn't need to know that info at all. especially in the beginning
+      btnContinue: false,
+      user: this.props.user,
     }
   }
 
   tryAgain() {
     this.setState({
-      choosingCherry: true,
+      notYet: true,
       fruits: [],
-      showButtonsWinsDefeat: false
+      didYouWin: false,
+      afterWards: true,
     });
   }
 
@@ -46,86 +48,109 @@ class BananasAndShit extends Component {
     } else {
       this.setState({
         counter: 0,
-        choosingCherry: true,
+        notYet: true,
         fruits: [],
+        didYouWin: false,
         level: 1,
         howManyTimesYouWon: 0,
+        afterWards: true,
         areYouPlaying: false,
         bet: bet,
         description: false,
-        showButtonsWinsDefeat: false,
-        didYouLose: false,
       });
     }
   }
 
   takeMoney() {
     const user = {...this.state.user};
-    user.account += this.state.counter;
-    console.log('TAKE_MONEY', user);
+    user.account = this.state.money + this.state.counter;
     changeAccountMoney(user._id, user)
       .then(res => {
+          console.log(res);
           localStorage.setItem('user', JSON.stringify(res));
         }
       );
     localStorage.setItem('user', JSON.stringify(user));
     this.setState({
       counter: 0,
-      choosingCherry: true,
+      notYet: true,
       fruits: [],
+      didYouWin: false,
       level: 1,
       howManyTimesYouWon: 0,
-      user: user,
+      afterWards: true,
+      money: this.state.money + this.state.counter,
       areYouPlaying: false,
-      didYouLose: false
     });
   }
 
-  chgMoneyStateOnServer(){ // split it later
-    let money = this.state.user.account - this.state.bet;
+  losing(){
+    console.log('YOU LOST#1');
+    let money = this.state.money - this.state.bet;
     let user = {...this.state.user};
     user.account = money;
     changeAccountMoney(user._id, user)
       .then(res => {
-        localStorage.setItem('user', JSON.stringify(user));
-        this.chgUserState(user);
+          localStorage.setItem('user', JSON.stringify(user));
+          this.chgMoneyState(money);
+          this.chgUserState(user);
         }
       );
+    // localStorage.setItem('user', JSON.stringify(user));
+    // this.chgMoneyState(money);
+    // this.chgUserState(user);
   }
 
   game(x) {
     let howManyTimesYouWon = this.state.howManyTimesYouWon;
     let level = this.state.level;
+    let didYouWin = false;
     let c = this.state.counter;
-    let areYouPlaying = this.state.areYouPlaying;
+    let isItCrap = false;
+    let money = this.state.money;
+    console.log(money);
+    if (!this.state.areYouPlaying) {
+      // console.log('YOU LOST#1');
+      // money -= this.state.bet;
+      // this.chgMoneyState(money);
+      // let user = {...this.state.user};
+      // user.account = money;
+      // this.chgUserState(user);
+      // localStorage.setItem('user', JSON.stringify(user));
+      this.losing();
+    }
     let arr1;
-    if(howManyTimesYouWon === 0) this.chgMoneyStateOnServer();
     if (level === 1) arr1 = game4(x);
     if (level === 2) arr1 = game3(x);
     if (level === 3) arr1 = game2(x);
     if (level === 4) arr1 = game1(x);
-    if (!arr1[x]) {// LOSING
+    if (!arr1[x]) {
+      console.log('YOU LOST#2');
       c = 0;
-      areYouPlaying = false;
       level = 1;
-      this.setState({choosingCherry: false, didYouLose: true})// if you delete it the user won't be shown a list of bananas and shit
-    } else {// WINNING
+      howManyTimesYouWon = 0;
+      this.losing();
+    } else {
+      didYouWin = true;
       c = counter(this.state.howManyTimesYouWon, this.state.bet);
-      areYouPlaying = true;
       howManyTimesYouWon += 1;
-      if (howManyTimesYouWon === 4) level += 1;
-      if (howManyTimesYouWon === 7) level += 1;
-      if (howManyTimesYouWon === 9) level += 1;
-      this.setState({choosingCherry: false}) // if you delete it the user won't be shown a list of bananas and shit
     }
+    if (howManyTimesYouWon === 4) level += 1;
+    if (howManyTimesYouWon === 7) level += 1;
+    if (howManyTimesYouWon === 9) level += 1;
     this.setState({
+      notYet: false,
       fruits: arr1,
+      isItCrap: isItCrap,
       counter: c,
+      didYouWin: didYouWin,
       level: level,
       howManyTimesYouWon: howManyTimesYouWon,
-      areYouPlaying: areYouPlaying,
-      showButtonsWinsDefeat: true
-    });
+      afterWards: false,
+      money: money,
+      areYouPlaying: true,
+      btnContinue: true
+    })
   }
 
   playNow(bet) {//continue playing
@@ -138,9 +163,8 @@ class BananasAndShit extends Component {
 
   stopPlaying() {
     this.setState({
-      //btnContinue: false,
+      btnContinue: false,
       description: true,
-      showButtonsWinsDefeat: false
     })
   }
 
@@ -160,13 +184,15 @@ class BananasAndShit extends Component {
     let user = {...this.state.user};
     let sum = this.state.user.account;
     if(user.status === 'Best Friend' || user.status === 'admin'){
-       sum += 5000;
+      sum += 5000;
     } else if(user.status === 'user'){
       sum += 100;
     }
     user.account = sum;
+    console.log('ADD_MONEY', sum, 'USER', user);
     changeAccountMoney(user._id, user)
       .then(res => {
+          console.log('AXIOS_chgAccount',res);
           localStorage.setItem('user', JSON.stringify(res));
           this.chgMoneyState(sum);
           this.chgUserState(res);
@@ -175,9 +201,7 @@ class BananasAndShit extends Component {
   }
 
   chgMoneyState(sum){
-    let user = this.state.user;
-    user.account = sum;
-    this.setState({user: user});
+    this.setState({money: sum});
   }
 
   chgUserState(user){
@@ -194,14 +218,17 @@ class BananasAndShit extends Component {
           <div>
             <div className="topNav">
               <button className="stopPlaying returnBack" onClick={() => this.back()}>Back</button>
-              <p><a href="">+</a>Account {this.state.user.account}$</p>
+              <p><a href="">+</a>Account {this.state.money}$</p>
             </div>
             <main className="game_process">
-              <h2>Level № {this.state.level}</h2>
+              <h2>Level
+                № {this.state.afterWards ? this.state.level :
+                  this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 ||
+                  this.state.howManyTimesYouWon === 9 ? this.state.level - 1 : this.state.level}</h2>
               <br/>
               <h3>Counter: {this.state.counter}</h3>
               <br/>
-              {this.state.choosingCherry ?
+              {this.state.notYet ?
                 <Cherry level={this.state.level} bet={this.state.bet}
                         counter={counter(this.state.howManyTimesYouWon, this.state.bet)}
                         howManyTimesYouWon={this.state.howManyTimesYouWon}
@@ -209,26 +236,25 @@ class BananasAndShit extends Component {
                 <Fruits bet={this.state.bet} level={this.state.level} counter={this.state.counter}
                         howManyTimesYouWon={this.state.howManyTimesYouWon} fruits={this.state.fruits}/>}
               <br/>
-              {this.state.showButtonsWinsDefeat && this.state.areYouPlaying  && !this.state.didYouLose ?
+              {this.state.didYouWin ?
                 <div>
                   <h4>You Won!!!</h4>
                   <div className="options">
                     <button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button>
                     <button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button>
                   </div>
-                </div> : this.state.didYouLose ?
+                </div> : !this.state.notYet ?
                   <div>
                     <h4 color='blue'>You Lost :(</h4>
                     <div className="options">
                       <button className="btn btn-primary"
-                              onClick={this.state.bet <= this.state.user.account ? () => this.newGame() : () => this.stopPlaying()}>
-                        {this.state.bet <= this.state.user.account ? "New game" : "Come Back"}</button>
+                              onClick={this.state.bet <= this.state.money ? () => this.newGame() : () => this.stopPlaying()}>
+                        {this.state.bet <= this.state.money ? "New game" : "Come Back"}</button>
                     </div>
 
                   </div> : ''}
-              <Statistics bet={this.state.bet} howManyTimesYouWon={this.state.howManyTimesYouWon} areYouPlaying={this.state.areYouPlaying}
-                          level={this.state.level} counter={this.state.counter} showButtonsWinsDefeat={this.state.showButtonsWinsDefeat}
-                          didYouLose={this.state.didYouLose} />
+              <Statistics bet={this.state.bet} howManyTimesYouWon={this.state.howManyTimesYouWon} didYouWin={this.state.didYouWin}
+                          level={this.state.level} counter={this.state.counter} notYet={this.state.notYet}/>
             </main>
           </div>
         }

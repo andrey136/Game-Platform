@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://andrey136.github.io/Game-Platform",
   "dependencies": {
+    "axios": "^0.19.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.3"
