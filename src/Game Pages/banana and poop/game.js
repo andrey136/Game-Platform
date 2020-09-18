@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Cherry from './cherry';
 import Fruits from './Fruits';
-import '../index.css';
+import '../../index.css';
 import Description from './description';
 import {game1} from './functionsForBananaApp';
 import {game2} from './functionsForBananaApp';

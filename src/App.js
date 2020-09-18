@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './index.css';
-import ChooseAGame from './ChooseAGame';
-import BananasAndShit from './banana and poop/game';
-import X_and_O from './x-and-o/game';
-import {getFromLocalStorage} from "./banana and poop/functionsForBananaApp";
+import ChooseAGame from './Components/ChooseAGame';
+import BananasAndShit from './Game Pages/banana and poop/game';
+import X_and_O from './Game Pages/x-and-o/game';
+import {getFromLocalStorage} from "./Game Pages/banana and poop/functionsForBananaApp";
 import Register from "./registerForm";
 
 class App extends Component {

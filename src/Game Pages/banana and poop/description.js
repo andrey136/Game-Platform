@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../index.css';
+import '../../index.css';
 import {inputChange} from './functionsForBananaApp';
 
 class description extends Component {
