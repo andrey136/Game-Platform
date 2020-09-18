@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import './index.css';
+// Game Pages
 import ChooseAGame from './Components/ChooseAGame';
 import BananasAndShit from './Game Pages/banana and poop/game';
 import X_and_O from './Game Pages/x-and-o/game';
-import {getFromLocalStorage} from "./Game Pages/banana and poop/functionsForBananaApp";
-import Register from "./Register Form/registerForm";
+// Components
 import Header from './Components/Header'
+// Register Form
+import Register from "./Register Form/registerForm";
+// Functions
+import {getFromLocalStorage} from "./Game Pages/banana and poop/functionsForBananaApp";
+
 
 class App extends Component {
   constructor(props) {
@@ -44,14 +49,6 @@ class App extends Component {
 
   authorized() {
     this.setState({});
-  }
-
-  logout() {
-    localStorage.setItem('user', JSON.stringify({status: 'stranger'}));
-    localStorage.setItem('account', '1000');
-  }
-
-  addMoney() {
   }
 
   render() {

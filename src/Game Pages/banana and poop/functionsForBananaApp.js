@@ -109,4 +109,4 @@ export const getFromLocalStorage = () => {
   }
   if(localStorage.getItem('user') === null)localStorage.setItem('user', JSON.stringify({status: 'stranger'}));
   return +localStorage.getItem('account');
-}
+};
