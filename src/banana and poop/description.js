@@ -29,7 +29,7 @@ class description extends Component {
           <p><button className="addMoney" onClick={() =>this.props.addMoney()}>+</button>Account {this.props.money}$</p>
         </div>
         <article>
-          <h1>{JSON.parse(localStorage.getItem('user')).status !== 'stranger' ? `Привет, ${JSON.parse(localStorage.getItem('user')).name}` : 'Description'}</h1>
+          <h1>{JSON.parse(localStorage.getItem('user')) !== 'stranger' ? `Привет, ${JSON.parse(localStorage.getItem('user')).name}` : 'Description'}</h1>
           <h3>Hello my dear friend. Today I'm going to show you my first computer game and explain the rules of it.</h3>
           <p>
             1. There are 4 levels.

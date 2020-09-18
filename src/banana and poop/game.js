@@ -202,7 +202,7 @@ class BananasAndShit extends Component {
                   </div>
 
                 </div> : ''}
-              <Statistics bet={this.state.bet} howManyTimesYouWon={this.state.howManyTimesYouWon} level={this.state.level} counter={this.state.counter}/>
+              <Statistics bet={this.state.bet} howManyTimesYouWon={this.state.howManyTimesYouWon} level={this.state.level} counter={counter(this.state.howManyTimesYouWon + 1, this.state.bet)}/>
             </main>
           </div>
         }
