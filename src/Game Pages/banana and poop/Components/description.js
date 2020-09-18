@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import '../../index.css';
-import {inputChange} from '../../Functions/App_js_Functions/functionsForBananaApp';
+import '../../../index.css';
+import {inputChange} from '../../../Functions/App_js_Functions/Banana_and_Poop_functions';
 
 class description extends Component {
   constructor(props) {

@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import '../../index.css';
 // Components
-import Cherry from './cherry';
-import Fruits from './Fruits';
-import Description from './description';
-import Statistics from "./statistics";
+import TopNav from "./Components/TopNav";
+import Cherry from './Components/cherry';
+import Fruits from './Components/Fruits';
+import Description from './Components/description';
+import Statistics from "./Components/statistics";
 // Functions
-import {game1} from '../../Functions/App_js_Functions/functionsForBananaApp';
-import {game2} from '../../Functions/App_js_Functions/functionsForBananaApp';
-import {game3} from '../../Functions/App_js_Functions/functionsForBananaApp';
-import {game4} from '../../Functions/App_js_Functions/functionsForBananaApp';
-import {counter} from '../../Functions/App_js_Functions/functionsForBananaApp';
+import {game1} from '../../Functions/App_js_Functions/Banana_and_Poop_functions';
+import {game2} from '../../Functions/App_js_Functions/Banana_and_Poop_functions';
+import {game3} from '../../Functions/App_js_Functions/Banana_and_Poop_functions';
+import {game4} from '../../Functions/App_js_Functions/Banana_and_Poop_functions';
+import {counter} from '../../Functions/App_js_Functions/Banana_and_Poop_functions';
 
 class BananasAndShit extends Component {
   constructor(props) {
@@ -171,12 +172,13 @@ class BananasAndShit extends Component {
       <div>
         {this.state.description ?
           <Description money={this.state.money}  menu={() => this.back()} addMoney={() => this.addMoney()} playNow={(bet) => this.newGame(bet)} areYouPlaying={this.state.areYouPlaying} btnContinue={this.state.btnContinue}/> :
+
           <div>
-            <div className="topNav">
-              <button className="stopPlaying returnBack"  onClick={() => this.back()}>Back</button>
-              <p><a href="">+</a>Account {this.state.money}$</p>
-            </div>
+
+            <TopNav money={this.state.money} back={() => this.back()}/>
+
             <main className="game_process">
+
               <h2>Level
                 № {this.state.afterWards ? this.state.level :
                   this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 ||
@@ -184,6 +186,7 @@ class BananasAndShit extends Component {
               <br/>
               <h3>Counter: {this.state.counter}</h3>
               <br/>
+
               {this.state.notYet ?
                 <Cherry level={this.state.level} bet={this.state.bet}
                         counter={counter(this.state.howManyTimesYouWon, this.state.bet)}
@@ -193,13 +196,17 @@ class BananasAndShit extends Component {
                         howManyTimesYouWon={this.state.howManyTimesYouWon} fruits={this.state.fruits}/>}
               <br/>
               {this.state.didYouWin ?
+
                 <div>
                   <h4>You Won!!!</h4>
                   <div className="options">
                       <button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button>
                       <button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button>
                   </div>
-                </div> : !this.state.notYet ?
+                </div>
+
+                : !this.state.notYet ?
+
                 <div>
                   <h4 color='blue'>You Lost :(</h4>
                   <div className="options">
@@ -207,7 +214,10 @@ class BananasAndShit extends Component {
                       {this.state.bet <= this.state.money ? "New game" : "Come Back"}</button>
                   </div>
 
-                </div> : ''}
+                </div>
+
+                  : ''}
+
               <Statistics bet={this.state.bet} howManyTimesYouWon={this.state.howManyTimesYouWon} level={this.state.level} counter={counter(this.state.howManyTimesYouWon + 1, this.state.bet)}/>
             </main>
           </div>
