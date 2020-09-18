@@ -5,6 +5,7 @@ import BananasAndShit from './Game Pages/banana and poop/game';
 import X_and_O from './Game Pages/x-and-o/game';
 import {getFromLocalStorage} from "./Game Pages/banana and poop/functionsForBananaApp";
 import Register from "./Register Form/registerForm";
+import Header from './Components/Header'
 
 class App extends Component {
   constructor(props) {
@@ -56,14 +57,7 @@ class App extends Component {
   render() {
     return (
       <div id="wrapper">
-        <header>
-          <nav>
-            {JSON.parse(localStorage.getItem('user')).status !== 'stranger' &&
-            <a href="" onClick={() => this.logout()}>Log out</a>}
-            <h1>Game Platform</h1>
-
-          </nav>
-        </header>
+        <Header/>
         {JSON.parse(localStorage.getItem('user')).status === 'stranger' ?
           <Register render={() => this.authorized()}/> :
 
