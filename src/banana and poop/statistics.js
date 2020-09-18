@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../index.css';
 
 class Statistics extends Component {
   constructor(props){
