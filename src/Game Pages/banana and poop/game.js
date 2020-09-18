@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../../index.css';
 // Components
 import TopNav from "./Components/TopNav";
+import Level from "./Components/Level";
 import Cherry from './Components/cherry';
 import Fruits from './Components/Fruits';
 import Description from './Components/description';
@@ -174,19 +175,9 @@ class BananasAndShit extends Component {
           <Description money={this.state.money}  menu={() => this.back()} addMoney={() => this.addMoney()} playNow={(bet) => this.newGame(bet)} areYouPlaying={this.state.areYouPlaying} btnContinue={this.state.btnContinue}/> :
 
           <div>
-
             <TopNav money={this.state.money} back={() => this.back()}/>
-
             <main className="game_process">
-
-              <h2>Level
-                № {this.state.afterWards ? this.state.level :
-                  this.state.howManyTimesYouWon === 4 || this.state.howManyTimesYouWon === 7 ||
-                  this.state.howManyTimesYouWon === 9 ? this.state.level - 1 : this.state.level}</h2>
-              <br/>
-              <h3>Counter: {this.state.counter}</h3>
-              <br/>
-
+              <Level counter={this.state.counter} howManyTimesYouWon={this.state.howManyTimesYouWon} level={this.state.level} afterWards={this.state.afterWards}/>
               {this.state.notYet ?
                 <Cherry level={this.state.level} bet={this.state.bet}
                         counter={counter(this.state.howManyTimesYouWon, this.state.bet)}
