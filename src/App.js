@@ -4,7 +4,7 @@ import ChooseAGame from './Components/ChooseAGame';
 import BananasAndShit from './Game Pages/banana and poop/game';
 import X_and_O from './Game Pages/x-and-o/game';
 import {getFromLocalStorage} from "./Game Pages/banana and poop/functionsForBananaApp";
-import Register from "./registerForm";
+import Register from "./Register Form/registerForm";
 
 class App extends Component {
   constructor(props) {
