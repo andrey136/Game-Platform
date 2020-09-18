@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
+import '../../index.css';
+// Components
 import Cherry from './cherry';
 import Fruits from './Fruits';
-import '../../index.css';
 import Description from './description';
-import {game1} from './functionsForBananaApp';
-import {game2} from './functionsForBananaApp';
-import {game3} from './functionsForBananaApp';
-import {game4} from './functionsForBananaApp';
-import {counter} from './functionsForBananaApp';
-// import back from '../Pictures/banana-Pictures/back_big.png';
 import Statistics from "./statistics";
+// Functions
+import {game1} from '../../Functions/App_js_Functions/functionsForBananaApp';
+import {game2} from '../../Functions/App_js_Functions/functionsForBananaApp';
+import {game3} from '../../Functions/App_js_Functions/functionsForBananaApp';
+import {game4} from '../../Functions/App_js_Functions/functionsForBananaApp';
+import {counter} from '../../Functions/App_js_Functions/functionsForBananaApp';
 
 class BananasAndShit extends Component {
   constructor(props) {

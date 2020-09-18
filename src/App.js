@@ -9,7 +9,7 @@ import Header from './Components/Header'
 // Register Form
 import Register from "./Register Form/registerForm";
 // Functions
-import {getFromLocalStorage} from "./Game Pages/banana and poop/functionsForBananaApp";
+import {getFromLocalStorage} from "./Functions/App_js_Functions/functionsForBananaApp";
 
 
 class App extends Component {
