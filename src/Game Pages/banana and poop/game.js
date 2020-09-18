@@ -6,6 +6,7 @@ import Level from "./Components/Level";
 import Cherry from './Components/cherry';
 import Fruits from './Components/Fruits';
 import YouWon from "./Components/YouWon";
+import YouLost from "./Components/YouLost";
 import Description from './Components/description';
 import Statistics from "./Components/statistics";
 // Functions
@@ -174,7 +175,6 @@ class BananasAndShit extends Component {
       <div>
         {this.state.description ?
           <Description money={this.state.money}  menu={() => this.back()} addMoney={() => this.addMoney()} playNow={(bet) => this.newGame(bet)} areYouPlaying={this.state.areYouPlaying} btnContinue={this.state.btnContinue}/> :
-
           <div>
             <TopNav money={this.state.money} back={() => this.back()}/>
             <main className="game_process">
@@ -189,20 +189,9 @@ class BananasAndShit extends Component {
               <br/>
               {this.state.didYouWin ?
                 <YouWon tryAgain={() => this.tryAgain()} takeMoney={() => this.takeMoney()}/>
-
                 : !this.state.notYet ?
-
-                <div>
-                  <h4 color='blue'>You Lost :(</h4>
-                  <div className="options">
-                    <button className="btn btn-primary" onClick={this.state.bet <= this.state.money ? () => this.newGame() : () => this.stopPlaying()}>
-                      {this.state.bet <= this.state.money ? "New game" : "Come Back"}</button>
-                  </div>
-
-                </div>
-
+                <YouLost bet={this.state.bet} money={this.state.money} newGame={() => this.newGame()} stopPlaying={() => this.stopPlaying()}/>
                   : ''}
-
               <Statistics bet={this.state.bet} howManyTimesYouWon={this.state.howManyTimesYouWon} level={this.state.level} counter={counter(this.state.howManyTimesYouWon + 1, this.state.bet)}/>
             </main>
           </div>
