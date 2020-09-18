@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../../../index.css';
 import {inputChange} from '../../../Functions/App_js_Functions/Banana_and_Poop_functions';
+import TopNav from "./TopNav";
 
 class description extends Component {
   constructor(props) {
@@ -24,10 +25,7 @@ class description extends Component {
   render() {
     return (
       <div>
-        <div className="topNav">
-          <button className="stopPlaying returnBack" onClick={() => this.props.menu()}>Back</button>
-          <p><button className="addMoney" onClick={() =>this.props.addMoney()}>+</button>Account {this.props.money}$</p>
-        </div>
+        <TopNav money={this.props.money} back={() => this.props.menu()} addMoney={() => this.props.addMoney()}/>
         <article>
           <h1>{JSON.parse(localStorage.getItem('user')) !== 'stranger' ? `Привет, ${JSON.parse(localStorage.getItem('user')).name}` : 'Description'}</h1>
           <h3>Hello my dear friend. Today I'm going to show you my first computer game and explain the rules of it.</h3>

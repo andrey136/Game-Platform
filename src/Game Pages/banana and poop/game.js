@@ -176,7 +176,7 @@ class BananasAndShit extends Component {
         {this.state.description ?
           <Description money={this.state.money}  menu={() => this.back()} addMoney={() => this.addMoney()} playNow={(bet) => this.newGame(bet)} areYouPlaying={this.state.areYouPlaying} btnContinue={this.state.btnContinue}/> :
           <div>
-            <TopNav money={this.state.money} back={() => this.back()}/>
+            <TopNav money={this.state.money} back={() => this.back()} addMoney={() => this.addMoney()}/>
             <main className="game_process">
               <Level counter={this.state.counter} howManyTimesYouWon={this.state.howManyTimesYouWon} level={this.state.level} afterWards={this.state.afterWards}/>
               {this.state.notYet ?
