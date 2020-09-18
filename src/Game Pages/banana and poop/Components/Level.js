@@ -18,9 +18,4 @@ class Level extends Component {
     }
 }
 
-// afterWards
-// level
-// howManyTimesYouWon
-
-
 export default Level;

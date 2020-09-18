@@ -5,6 +5,7 @@ import TopNav from "./Components/TopNav";
 import Level from "./Components/Level";
 import Cherry from './Components/cherry';
 import Fruits from './Components/Fruits';
+import YouWon from "./Components/YouWon";
 import Description from './Components/description';
 import Statistics from "./Components/statistics";
 // Functions
@@ -187,14 +188,7 @@ class BananasAndShit extends Component {
                         howManyTimesYouWon={this.state.howManyTimesYouWon} fruits={this.state.fruits}/>}
               <br/>
               {this.state.didYouWin ?
-
-                <div>
-                  <h4>You Won!!!</h4>
-                  <div className="options">
-                      <button className="btn btn-primary" onClick={() => this.tryAgain()}>Try again</button>
-                      <button className="btn btn-danger" onClick={() => this.takeMoney()}>Take Money</button>
-                  </div>
-                </div>
+                <YouWon tryAgain={() => this.tryAgain()} takeMoney={() => this.takeMoney()}/>
 
                 : !this.state.notYet ?
 
