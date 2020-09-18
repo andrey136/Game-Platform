@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../../index.css';
 // Components
-import Description from './Components/description';
+import Description from './Components/Description/description';
 import TopNav from "./Components/TopNav";
 import Level from "./Components/Level";
 import Cherry from './Components/cherry';
