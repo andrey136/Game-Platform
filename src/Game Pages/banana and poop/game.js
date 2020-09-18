@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import '../../index.css';
 // Components
+import Description from './Components/description';
 import TopNav from "./Components/TopNav";
 import Level from "./Components/Level";
 import Cherry from './Components/cherry';
 import Fruits from './Components/Fruits';
 import YouWon from "./Components/YouWon";
 import YouLost from "./Components/YouLost";
-import Description from './Components/description';
 import Statistics from "./Components/statistics";
 // Functions
 import {game1} from '../../Functions/App_js_Functions/Banana_and_Poop_functions';
