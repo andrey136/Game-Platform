@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../../index.css';
-import Xs from '../../photos/X_and_O-photos/Xs.png';
-import Os from '../../photos/X_and_O-photos/Os.png';
+import Xs from '../../Pictures/X_and_O-photos/Xs.png';
+import Os from '../../Pictures/X_and_O-photos/Os.png';
 
 class game extends Component {
   constructor(props) {

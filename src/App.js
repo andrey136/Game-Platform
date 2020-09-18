@@ -56,18 +56,25 @@ class App extends Component {
       <div id="wrapper">
         <Header/>
         {JSON.parse(localStorage.getItem('user')).status === 'stranger' ?
+
           <Register render={() => this.authorized()}/> :
+
           <div className="App">
+
             {!this.state['isGameChosen'] && <ChooseAGame chosenGame={(name) => this.chosenGame(name)}/>}
+
             {this.state['bananasAndShit'] &&
             <BananasAndShit user={this.state.user} menu={(currentGame) => this.menu(currentGame)}
                             chosenGame={(name) => this.chosenGame(name)}
                             money={this.state.account} account={(money) => this.account(money)}
                             addMoney={() => this.addMoney()}/>}
+
             {this.state['xAndO'] &&
             <X_and_O chosenGame={(name) => this.chosenGame(name)} menu={(currentGame) => this.menu(currentGame)}
                      money={this.state.account} account={(money) => this.account(money)}/>}
+            <footer></footer>
           </div>
+
         }
       </div>
     );

@@ -8,7 +8,7 @@ import {game2} from './functionsForBananaApp';
 import {game3} from './functionsForBananaApp';
 import {game4} from './functionsForBananaApp';
 import {counter} from './functionsForBananaApp';
-// import back from '../photos/banana-photos/back_big.png';
+// import back from '../Pictures/banana-Pictures/back_big.png';
 import Statistics from "./statistics";
 
 class BananasAndShit extends Component {

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import '../index.css';
+// Functions
+import {_handleKeyDownLogIn} from "../Functions/App_js_Functions/Register_Form_js_functions";
 
 class Register extends Component {
   constructor(props) {
@@ -43,13 +45,6 @@ class Register extends Component {
     }
   }
 
-  _handleKeyDownLogIn(e) {
-    if (e.key === 'Enter') {
-      e.target.blur();
-      this.authorize();
-    }
-  }
-
   authorize() {
     localStorage.setItem('user', JSON.stringify({name: this.state.inputTextEmail, status: "user", login: this.state.inputTextPassword}));
     this.props.render();
@@ -65,7 +60,7 @@ class Register extends Component {
           <input type="text" placeholder="*login" ref="password" onChange={(e) => this.changeInputPassword(e.target.value)} onKeyDown={(e) => this._handleKeyDownPassword(e)}
                  value={this.state.inputTextPassword} className="password"/>
           <div className="flex-center">
-            <button className="btn btn-warning" ref="log_in" onKeyDown={(e) => this._handleKeyDownLogIn(e)} onClick={() => this.authorize()}>Log in
+            <button className="btn btn-warning" ref="log_in" onKeyDown={(e) => _handleKeyDownLogIn(e)} onClick={() => this.authorize()}>Log in
             </button>
           </div>
         </div>
