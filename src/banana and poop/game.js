@@ -73,6 +73,7 @@ class BananasAndShit extends Component {
       afterWards: true,
       money: this.state.money + this.state.counter,
       areYouPlaying: false,
+      btnContinue: false
     });
   }
 
@@ -83,10 +84,12 @@ class BananasAndShit extends Component {
     let c = this.state.counter;
     let isItCrap = false;
     let money = this.state.money;
+    let btnContinue = false;
     console.log(money);
     if (!this.state.areYouPlaying) {
       money -= this.state.bet;
       localStorage.setItem('account', `${money}`);
+      // btnContinue = false;
     }
     let arr1;
     if (level === 1) arr1 = game4(x);
@@ -97,10 +100,12 @@ class BananasAndShit extends Component {
       c = 0;
       level = 1;
       howManyTimesYouWon = 0;
+      btnContinue = false;
     } else {
       didYouWin = true;
       c = counter(this.state.howManyTimesYouWon, this.state.bet);
       howManyTimesYouWon += 1;
+      btnContinue = true;
     }
     if (howManyTimesYouWon === 4) level += 1;
     if (howManyTimesYouWon === 7) level += 1;
@@ -116,7 +121,7 @@ class BananasAndShit extends Component {
       afterWards: false,
       money: money,
       areYouPlaying: true,
-      btnContinue: true
+      btnContinue: btnContinue
     })
   }
 
