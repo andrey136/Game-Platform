@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import './index.css';
-import image from './photos/banana-photos/image.jpeg';
-import xo from './photos/X_and_O-photos/xo.png';
-import todo from './photos/ToDo/ToDoImage.jpeg';
+import '../index.css';
+// Images
+import image from '../Pictures/banana-photos/image.jpeg';
+import xo from '../Pictures/X_and_O-photos/xo.png';
+import todo from '../Pictures/ToDo/ToDoImage.jpeg';
 
 class ChooseAGame extends Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class ChooseAGame extends Component {
   }
 
   render() {
-    /**/
     return (
       <div>
         <div className="banana">

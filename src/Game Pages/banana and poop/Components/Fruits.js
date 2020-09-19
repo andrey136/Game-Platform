@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import '../App.css';
+import '../../../index.css';
 import Statistics from './statistics';
-import shit from '../photos/banana-photos/poop.jpeg';
-import banana from '../photos/banana-photos/banana.png';
+import shit from '../../../Pictures/banana-photos/poop.jpeg';
+import banana from '../../../Pictures/banana-photos/banana.png';
 
 class Fruits extends Component {
   constructor(props) {
