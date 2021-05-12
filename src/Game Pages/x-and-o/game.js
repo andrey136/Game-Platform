@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import '../../index.css';
+// Pictures
 import Xs from '../../Pictures/X_and_O-photos/Xs.png';
 import Os from '../../Pictures/X_and_O-photos/Os.png';
+// Functions
+import {again} from "../../Functions/App_js_Functions/Xs_and_Os_functions";
+import {back} from "../../Functions/App_js_Functions/Xs_and_Os_functions";
+import {add_index_of_X_or_O_to_the_state} from "../../Functions/App_js_Functions/Xs_and_Os_functions";
 
 class game extends Component {
   constructor(props) {
@@ -19,19 +24,11 @@ class game extends Component {
 
   chosen(id) {
     if (!this.state.chosenItems_X.includes(id) && !this.state.chosenItems_O.includes(id) && !this.state._end) {
-      let count = this.state.count;
-      let chosenItems_X = this.state.chosenItems_X;
-      let chosenItems_O = this.state.chosenItems_O;
-      if (count % 2) {
-        chosenItems_O.push(id);
-      } else {
-        chosenItems_X.push(id);
-      }
-      this.setState({
-        count: ++count,
-      });
-      count > 4 && this.finish();
+      let state = add_index_of_X_or_O_to_the_state(id, this.state.chosenItems_X, this.state.chosenItems_O, this.state.count);
+      this.changeState(state);
+      state['count'] > 4 && this.finish()
     }
+    console.log(this.state.chosenItems_O);
   }
 
   finish() {
@@ -75,28 +72,15 @@ class game extends Component {
     })
   }
 
-  again() {
-    this.setState({
-      str: '',
-      count: 0,
-      chosenItems_X: [],
-      chosenItems_O: [],
-      winIndexs: [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]],
-      trueOrFalse: [],
-      _end: false,
-    });
-  }
-
-  back() {
-    this.props.menu('Xs_and_Os');
-    this.props.account(this.props.money);
+  changeState(obj){
+    this.setState(obj);
   }
 
   render() {
     return (
       <div>
         <div className="topNav">
-          <button className="stopPlaying returnBack" onClick={() => this.back()}>Back</button>
+          <button className="stopPlaying returnBack" onClick={() => back(this.props.menu, this.props.account, this.props.money)}>Back</button>
           <p>Account {this.props.money}$</p>
         </div>
         <section id="game">
@@ -144,7 +128,7 @@ class game extends Component {
           </div>
           {this.state._end && <h2>{this.state.str}</h2>}
           {this.state._end && <div class="flex-center">
-            <button className="btn btn-primary" onClick={() => this.again()}>Play Again</button>
+            <button className="btn btn-primary" onClick={() => this.changeState(again())}>Play Again</button>
           </div>}
         </section>
       </div>
