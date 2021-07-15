@@ -1,5 +1,3 @@
-import React, {Component} from "react";
-
 export const again = () => {
     let state = {
         str: '',
@@ -30,20 +28,3 @@ export const add_index_of_X_or_O_to_the_state = (id, chosenItems_X, chosenItems_
         chosenItems_X: chosenItems_X
     };
 };
-
-// chosen(id) {
-//     if (!this.state.chosenItems_X.includes(id) && !this.state.chosenItems_O.includes(id) && !this.state._end) {
-//         let count = this.state.count;
-//         let chosenItems_X = this.state.chosenItems_X;
-//         let chosenItems_O = this.state.chosenItems_O;
-//         if (count % 2) {
-//             chosenItems_O.push(id);
-//         } else {
-//             chosenItems_X.push(id);
-//         }
-//         this.setState({
-//             count: ++count,
-//         });
-//         count > 4 && this.finish();
-//     }
-// }

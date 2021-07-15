@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import '../../../index.css';
 
 class YouWon extends Component {
-
     render() {
         return (
           <div>

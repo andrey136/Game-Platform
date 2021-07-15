@@ -1,26 +1,15 @@
 import React, {Component} from 'react';
-import '../../../index.css';
 // Pictures
-import cherry from '../../../Pictures/banana-photos/cherry.jpeg'
+import cherry from '../../../Pictures/banana-photos/cherry.jpeg';
+// Functions
+import {range} from '../../../Functions/App_js_Functions/functions';
 
 class Cherry extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+    const cherries = range(5);
     return (
         <div className="cherry">
-          <img src={cherry} onClick={() => this.props.game4(0)}
-               alt=""/>
-          <img src={cherry} onClick={() => this.props.game4(1)}
-               alt=""/>
-          <img src={cherry} onClick={() => this.props.game4(2)}
-               alt=""/>
-          <img src={cherry} onClick={() => this.props.game4(3)}
-               alt=""/>
-          <img src={cherry} onClick={() => this.props.game4(4)}
-               alt=""/>
+             { cherries.map(el => <img src={cherry} onClick={() => this.props.game4(+el)} alt=""/>) }
         </div>
     );
   }

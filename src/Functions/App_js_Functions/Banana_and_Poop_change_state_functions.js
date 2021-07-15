@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import {counter, game1, game2, game3, game4} from "./Banana_and_Poop_functions";
 
 export const tryAgain = () => {
@@ -39,7 +38,6 @@ export const takeMoney = (money, counter) => {
 export const addMoney = (account) => {
     const user = JSON.parse(localStorage.getItem('user'));
     let sum = +localStorage.getItem('account');
-    console.log(account);
     if(user.status === 'Best Friend' || user.status === 'admin'){
         sum += 5000;
     } else if(user.status === 'user'){
@@ -58,7 +56,7 @@ export const newGame = (bet, state_bet) => {
             description: false,
             bet: state_bet
         };
-    }  else {
+    } else {
         state = {
             counter: 0,
             notYet: true,
@@ -84,11 +82,9 @@ export const game = (x, initial_state) => {
     let isItCrap = false;
     let money = initial_state.money;
     let btnContinue = false;
-    console.log(money);
     if (!initial_state.areYouPlaying) {
         money -= initial_state.bet;
         localStorage.setItem('account', `${money}`);
-        // btnContinue = false;
     }
     let arr1;
     if (level === 1) arr1 = game4(x);

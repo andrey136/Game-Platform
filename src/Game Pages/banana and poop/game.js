@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import '../../index.css';
 // Components
-import Description from './Components/Description/description';
+import Description from './Components/Description/Description';
 import TopNav from "./Components/TopNav";
 import Level from "./Components/Level";
 import Cherry from './Components/cherry';
@@ -41,7 +40,6 @@ class BananasAndShit extends Component {
 
   back(){
     if(this.state.description){
-
       this.props.menu('bananas-and-shit');
       this.props.account(this.state.money);
     } else {

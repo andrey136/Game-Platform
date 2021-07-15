@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../index.css';
 // Functions
 import {_handleKeyDownLogIn} from "../Functions/App_js_Functions/Register_Form_js_functions";
 
@@ -19,14 +18,12 @@ class Register extends Component {
     this.setState({
       inputTextEmail: value,
     });
-    console.log(this.state.inputText, this.title);
   }
 
   changeInputPassword(value){
     this.setState({
       inputTextPassword: value,
     });
-    console.log(this.state.inputText, this.title);
   }
 
   _handleKeyDownEmail(e) {

@@ -1,6 +1,16 @@
-import React, {Component} from 'react';
-
 const arr = ['26062003$', '2002126$'];
+const coefs = {
+  0: 1.238,
+  1: 1.547,
+  2: 1.934,
+  3: 2.417,
+  4: 4.028,
+  5: 6.714,
+  6: 11.19,
+  7: 27.974,
+  8: 69.936,
+  9: 349.681,
+}
 
 export const game4 = (x) => {
   let c = +Math.floor(Math.random() * 5);
@@ -43,40 +53,17 @@ export const game1 = (x) => {
   for (let i = 0; i < 5; i++) {
     i === c ? arr.push(1) : arr.push(0);
   }
-  console.log('!!!!!aaaaa!!!!!');
   return arr;
 };
 
 export const counter = (howManyTimesYouWon, bet) => {
-  switch(howManyTimesYouWon){
-    case(0):
-      return Math.round(bet * 1.238);
-    case(1):
-      return Math.round(bet * 1.547);
-    case(2):
-      return Math.round(bet * 1.934);
-    case(3):
-      return Math.round(bet * 2.417);
-    case(4):
-      return Math.round(bet * 4.028);
-    case(5):
-      return Math.round(bet * 6.714);
-    case(6):
-      return Math.round(bet * 11.19);
-    case(7):
-      return Math.round(bet * 27.974);
-    case(8):
-      return Math.round(bet * 69.936);
-    case(9):
-      return Math.round(bet * 349.681);
-  }
+  return Math.round(bet * coefs[howManyTimesYouWon]);
 };
 
 export const inputChange =  (value, inputText) => {
   let del = !value.includes('$');
   value = value.split('').filter(el => ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"].includes(el)).join('') + '$';
   if (value[0] === '0' && value.length !== 2) value = value.slice(1);
-  console.log(value);
   if (inputText === '0$') {
     return value;
   } else if (inputText === value && value.length !== 2 && del) {
@@ -84,7 +71,6 @@ export const inputChange =  (value, inputText) => {
   } else if (value.length === 2) {
     return '0$';
   } else if (arr.includes(value)){
-    console.log('CHEATING');
     cheating(value);
     return '0$';
   } else if(value === '12345678$' && localStorage.getItem('user') !== 'stranger'){
@@ -102,7 +88,6 @@ function cheating(code){
 }
 
 export const getFromLocalStorage = () => {
-  console.log('here');
   if (localStorage.getItem('account') === null) {
     localStorage.setItem('account', '1000');
     localStorage.setItem('user', JSON.stringify({status: 'stranger'}));

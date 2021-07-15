@@ -1,28 +1,21 @@
 import React, {Component} from 'react';
-import '../../../index.css';
-import Statistics from './statistics';
+// Pictures
 import shit from '../../../Pictures/banana-photos/poop.jpeg';
 import banana from '../../../Pictures/banana-photos/banana.png';
+// Functions
+import {range} from '../../../Functions/App_js_Functions/functions';
 
 class Fruits extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   linksOfPhotos(index) {
-    let arr = this.props.fruits.map(el => !el ? el = shit : el = banana);
-    console.log(this.props.fruits);
-    return arr[index];
+    let fruits = this.props.fruits.map(fruit => !fruit ? fruit = shit : fruit = banana);
+    return fruits[index];
   }
 
   render() {
+    const fruits = range(5);
     return (
       <div className="cherry">
-        <img src={this.linksOfPhotos(0)} alt=""/>
-        <img src={this.linksOfPhotos(1)} alt=""/>
-        <img src={this.linksOfPhotos(2)} alt=""/>
-        <img src={this.linksOfPhotos(3)} alt=""/>
-        <img src={this.linksOfPhotos(4)} alt=""/>
+        { fruits.map(fruit => <img src={this.linksOfPhotos(fruit)} alt=""/>) }
       </div>
     );
   }

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import '../../../../index.css';
 
-class Description_Article extends Component {
-
+class DescriptionArticle extends Component {
     render() {
         return (
           <article>
@@ -35,4 +33,4 @@ class Description_Article extends Component {
     }
 }
 
-export default Description_Article;
+export default DescriptionArticle;

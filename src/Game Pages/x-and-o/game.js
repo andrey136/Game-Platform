@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../../index.css';
 // Pictures
 import Xs from '../../Pictures/X_and_O-photos/Xs.png';
 import Os from '../../Pictures/X_and_O-photos/Os.png';
@@ -7,6 +6,7 @@ import Os from '../../Pictures/X_and_O-photos/Os.png';
 import {again} from "../../Functions/App_js_Functions/Xs_and_Os_functions";
 import {back} from "../../Functions/App_js_Functions/Xs_and_Os_functions";
 import {add_index_of_X_or_O_to_the_state} from "../../Functions/App_js_Functions/Xs_and_Os_functions";
+import {range} from '../../Functions/App_js_Functions/functions';
 
 class game extends Component {
   constructor(props) {
@@ -28,7 +28,6 @@ class game extends Component {
       this.changeState(state);
       state['count'] > 4 && this.finish()
     }
-    console.log(this.state.chosenItems_O);
   }
 
   finish() {
@@ -39,9 +38,7 @@ class game extends Component {
       this.state.winIndexs.map(el => {
         trueOrFalse.push(el.every(cur => this.state.chosenItems_X.indexOf(cur) > -1));
       });
-      console.log(trueOrFalse);
       if (trueOrFalse.includes(true)) {
-        console.log('Player 1 wins');
         str = 'Player 1 wins';
         _end = true;
       } else {
@@ -60,7 +57,6 @@ class game extends Component {
       }
     }
     if (this.state.count === 8 && !_end && str === '') {
-      console.log("THE LAST");
       _end = true;
       str = 'Draw) Nobody wins!';
     }
@@ -77,6 +73,9 @@ class game extends Component {
   }
 
   render() {
+    const field = [3, 3];
+    const rows = field[0];
+    const cells = field[1];
     return (
       <div>
         <div className="topNav">
@@ -89,42 +88,12 @@ class game extends Component {
             2 players only!
           </h1>
           <div className="container">
-            <div onClick={() => this.chosen(0)}>
-              {this.state.chosenItems_O.includes(0) && <img src={Os} alt=""/>}
-              {this.state.chosenItems_X.includes(0) && <img src={Xs} alt=""/>}
+            {range(rows * cells).map(cellInd => 
+              <div onClick={() => this.chosen(cellInd)}>
+              {this.state.chosenItems_O.includes(cellInd) && <img src={Os} alt=""/>}
+              {this.state.chosenItems_X.includes(cellInd) && <img src={Xs} alt=""/>}
             </div>
-            <div onClick={() => this.chosen(1)}>
-              {this.state.chosenItems_O.includes(1) && <img src={Os} alt=""/>}
-              {this.state.chosenItems_X.includes(1) && <img src={Xs} alt=""/>}
-            </div>
-            <div onClick={() => this.chosen(2)}>
-              {this.state.chosenItems_O.includes(2) && <img src={Os} alt=""/>}
-              {this.state.chosenItems_X.includes(2) && <img src={Xs} alt=""/>}
-            </div>
-            <div onClick={() => this.chosen(3)}>
-              {this.state.chosenItems_O.includes(3) && <img src={Os} alt=""/>}
-              {this.state.chosenItems_X.includes(3) && <img src={Xs} alt=""/>}
-            </div>
-            <div onClick={() => this.chosen(4)}>
-              {this.state.chosenItems_O.includes(4) && <img src={Os} alt=""/>}
-              {this.state.chosenItems_X.includes(4) && <img src={Xs} alt=""/>}
-            </div>
-            <div onClick={() => this.chosen(5)}>
-              {this.state.chosenItems_O.includes(5) && <img src={Os} alt=""/>}
-              {this.state.chosenItems_X.includes(5) && <img src={Xs} alt=""/>}
-            </div>
-            <div onClick={() => this.chosen(6)}>
-              {this.state.chosenItems_O.includes(6) && <img src={Os} alt=""/>}
-              {this.state.chosenItems_X.includes(6) && <img src={Xs} alt=""/>}
-            </div>
-            <div onClick={() => this.chosen(7)}>
-              {this.state.chosenItems_O.includes(7) && <img src={Os} alt=""/>}
-              {this.state.chosenItems_X.includes(7) && <img src={Xs} alt=""/>}
-            </div>
-            <div onClick={() => this.chosen(8)}>
-              {this.state.chosenItems_O.includes(8) && <img src={Os} alt=""/>}
-              {this.state.chosenItems_X.includes(8) && <img src={Xs} alt=""/>}
-            </div>
+            )}
           </div>
           {this.state._end && <h2>{this.state.str}</h2>}
           {this.state._end && <div class="flex-center">

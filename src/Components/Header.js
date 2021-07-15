@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import '../index.css';
 // Functions
 import {logout} from "../Functions/App_js_Functions/functions";
 
 
 class Header extends Component {
-
     render() {
         return (
               <header>
