@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-// Functions
-import {logout} from "../Functions/App_js_Functions/functions";
 
 
 class Header extends Component {
@@ -8,8 +6,6 @@ class Header extends Component {
         return (
               <header>
                   <nav>
-                      {JSON.parse(localStorage.getItem('user')).status !== 'stranger' &&
-                      <a href="" onClick={() => logout()}>Log out</a>}
                       <h1>Game Platform</h1>
                   </nav>
               </header>

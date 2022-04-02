@@ -43,7 +43,7 @@ class Register extends Component {
   }
 
   authorize() {
-    localStorage.setItem('user', JSON.stringify({name: this.state.inputTextEmail, status: "user", login: this.state.inputTextPassword}));
+    // localStorage.setItem('user', JSON.stringify({name: this.state.inputTextEmail, status: "user", login: this.state.inputTextPassword}));
     this.props.render();
   }
 

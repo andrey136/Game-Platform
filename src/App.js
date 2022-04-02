@@ -5,10 +5,6 @@ import BananasAndShit from './Game Pages/banana and poop/game';
 import XAndO from './Game Pages/x-and-o/game';
 // Components
 import Header from './Components/Header'
-// Register Form
-import Register from "./Register Form/registerForm";
-// Functions
-import {getFromLocalStorage} from "./Functions/App_js_Functions/Banana_and_Poop_functions";
 
 
 class App extends Component {
@@ -19,8 +15,12 @@ class App extends Component {
       isGameChosen: false,
       bananasAndShit: false,
       xAndO: false,
-      account: getFromLocalStorage(),
-      user: JSON.parse(localStorage.getItem('user')),
+      account: 1000,
+      user: {
+        name: "my friend",
+        login: "abc@me.com",
+        status: "user",
+      }
     }
   }
 
@@ -54,21 +54,18 @@ class App extends Component {
     return (
       <div id="wrapper">
         <Header/>
-        {JSON.parse(localStorage.getItem('user')).status === 'stranger' ?
-          <Register render={() => this.authorized()}/> :
-          <div className="App">
-            {!this.state['isGameChosen'] && <ChooseAGame chosenGame={(name) => this.chosenGame(name)}/>}
-            {this.state['bananasAndShit'] &&
-            <BananasAndShit user={this.state.user} menu={(currentGame) => this.menu(currentGame)}
-                            chosenGame={(name) => this.chosenGame(name)}
-                            money={this.state.account} account={(money) => this.account(money)}
-                            addMoney={() => this.addMoney()}/>}
-            {this.state['xAndO'] &&
-            <XAndO chosenGame={(name) => this.chosenGame(name)} menu={(currentGame) => this.menu(currentGame)}
-                     money={this.state.account} account={(money) => this.account(money)}/>}
-            <footer></footer>
-          </div>
-        }
+        <div className="App">
+          {!this.state['isGameChosen'] && <ChooseAGame chosenGame={(name) => this.chosenGame(name)}/>}
+          {this.state['bananasAndShit'] &&
+          <BananasAndShit user={this.state.user} menu={(currentGame) => this.menu(currentGame)}
+                          chosenGame={(name) => this.chosenGame(name)}
+                          money={this.state.account} account={(money) => this.account(money)}
+                          addMoney={() => this.addMoney()}/>}
+          {this.state['xAndO'] &&
+          <XAndO chosenGame={(name) => this.chosenGame(name)} menu={(currentGame) => this.menu(currentGame)}
+                 money={this.state.account} account={(money) => this.account(money)}/>}
+        </div>
+        <footer></footer>
       </div>
     );
   }

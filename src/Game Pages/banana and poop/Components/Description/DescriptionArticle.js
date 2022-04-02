@@ -4,7 +4,7 @@ class DescriptionArticle extends Component {
     render() {
         return (
           <article>
-              <h1>{JSON.parse(localStorage.getItem('user')) !== 'stranger' ? `Привет, ${JSON.parse(localStorage.getItem('user')).name}` : 'Description'}</h1>
+              <h1>{`Hello! Are you ready to win???`}</h1>
               <h3>Hello my dear friend. Today I'm going to show you my first computer game and explain the rules of it.</h3>
               <p>
                   1. There are 4 levels.

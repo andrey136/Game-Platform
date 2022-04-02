@@ -57,7 +57,7 @@ class BananasAndShit extends Component {
     return (
       <div>
         {this.state.description ?
-          <Description money={this.state.money}  menu={() => this.back()} addMoney={() => this.changeState(addMoney(this.state.account))} playNow={(bet) => this.changeState(newGame(bet, this.state.bet))} areYouPlaying={this.state.areYouPlaying} btnContinue={this.state.btnContinue}/> :
+          <Description money={this.state.money}  menu={() => this.back()} addMoney={() => this.changeState(addMoney(this.state.money))} playNow={(bet) => this.changeState(newGame(bet, this.state.bet))} areYouPlaying={this.state.areYouPlaying} btnContinue={this.state.btnContinue}/> :
           <div>
             <TopNav money={this.state.money} back={() => this.back()} addMoney={() => this.changeState(addMoney(this.state.account))}/>
             <main className="game_process">

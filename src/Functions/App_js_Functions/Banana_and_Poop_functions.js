@@ -70,28 +70,9 @@ export const inputChange =  (value, inputText) => {
       return value.slice(0, -2) + '$';
   } else if (value.length === 2) {
     return '0$';
-  } else if (arr.includes(value)){
-    cheating(value);
-    return '0$';
-  } else if(value === '12345678$' && localStorage.getItem('user') !== 'stranger'){
-    localStorage.setItem('user', 'stranger');
+  } else if (arr.includes(value)) {
     return '0$';
   } else {
       return value.split('$').join('') + '$';
   }
-};
-
-function cheating(code){
-  if(code === '26062003$')localStorage.setItem('user', JSON.stringify({name: "Алина", status: "Best Friend", login: "alina33"}));
-  if(code === '2002126$')localStorage.setItem('user', JSON.stringify({name: "Андрей", status: "admin", login: "andrey.mardash@gmail.com"}));
-  localStorage.setItem('account', '10000');
-}
-
-export const getFromLocalStorage = () => {
-  if (localStorage.getItem('account') === null) {
-    localStorage.setItem('account', '1000');
-    localStorage.setItem('user', JSON.stringify({status: 'stranger'}));
-  }
-  if(localStorage.getItem('user') === null)localStorage.setItem('user', JSON.stringify({status: 'stranger'}));
-  return +localStorage.getItem('account');
 };

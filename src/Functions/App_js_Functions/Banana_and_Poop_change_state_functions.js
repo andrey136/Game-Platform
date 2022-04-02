@@ -19,7 +19,6 @@ export const stopPlaying = () => {
 };
 
 export const takeMoney = (money, counter) => {
-    localStorage.setItem('account', `${money + counter}`);
     let state = {
         counter: 0,
         notYet: true,
@@ -36,16 +35,7 @@ export const takeMoney = (money, counter) => {
 };
 
 export const addMoney = (account) => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    let sum = +localStorage.getItem('account');
-    if(user.status === 'Best Friend' || user.status === 'admin'){
-        sum += 5000;
-    } else if(user.status === 'user'){
-        sum += 100;
-    }
-    localStorage.setItem('account', `${sum}`);
-    let state = {money: sum};
-    return state;
+    return {money: account + 100};
 };
 
 export const newGame = (bet, state_bet) => {
@@ -84,7 +74,6 @@ export const game = (x, initial_state) => {
     let btnContinue = false;
     if (!initial_state.areYouPlaying) {
         money -= initial_state.bet;
-        localStorage.setItem('account', `${money}`);
     }
     let arr1;
     if (level === 1) arr1 = game4(x);
