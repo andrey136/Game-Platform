@@ -23,7 +23,7 @@ class ChooseAGame extends Component {
           <div className="shadow">
             <img src={xo} alt=""/>
           </div>
-          <h2>Xs and Os</h2>
+          <h2>Tic Tac Toe</h2>
           <div className="flex-center">
             <button className="btn btn-success" onClick={() => this.props.chosenGame('X-and-O')}><b>Try it</b></button>
           </div>

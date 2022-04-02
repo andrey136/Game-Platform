@@ -80,10 +80,9 @@ class game extends Component {
       <div>
         <div className="topNav">
           <button className="stopPlaying returnBack" onClick={() => back(this.props.menu, this.props.account, this.props.money)}>Back</button>
-          <p>Account {this.props.money}$</p>
         </div>
         <section id="game">
-          <h1>Game Xs and Os
+          <h1>Tic Tac Toe
             <br/>
             2 players only!
           </h1>

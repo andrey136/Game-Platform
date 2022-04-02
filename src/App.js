@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // Game Pages
 import ChooseAGame from './Components/ChooseAGame';
 import BananasAndShit from './Game Pages/banana and poop/game';
-import XAndO from './Game Pages/x-and-o/game';
+import XAndO from './Game Pages/Tic Tac Toe/game';
 // Components
 import Header from './Components/Header'
 
